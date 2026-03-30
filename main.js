@@ -37,3 +37,29 @@ skillFills.forEach((el) => {
   el.style.width = '0%';
   skillObserver.observe(el);
 });
+
+// ── 개인 프로젝트 인라인 확장 토글 ──
+document.querySelectorAll('.side-chip').forEach((btn) => {
+  btn.addEventListener('click', () => {
+    const targetId = btn.dataset.target;
+    const panel = document.getElementById(targetId);
+    if (!panel) return;
+
+    const isOpen = panel.classList.contains('open');
+
+    // 같은 timeline-item 내 열린 패널 닫기
+    const parent = btn.closest('.timeline-content');
+    parent.querySelectorAll('.side-expand.open').forEach((p) => {
+      p.classList.remove('open');
+    });
+    parent.querySelectorAll('.side-chip[aria-expanded="true"]').forEach((b) => {
+      b.setAttribute('aria-expanded', 'false');
+    });
+
+    // 클릭한 패널 토글 (이미 열려있었으면 닫기만)
+    if (!isOpen) {
+      panel.classList.add('open');
+      btn.setAttribute('aria-expanded', 'true');
+    }
+  });
+});

@@ -210,12 +210,12 @@ a:hover { text-decoration: underline; }
   line-height: 1.6;
 }
 
-/* ── 개인 프로젝트 라벨 칩 ── */
+/* ── 개인 프로젝트 인라인 확장 ── */
 .side-chips {
   display: flex;
   flex-wrap: wrap;
   gap: 6px;
-  margin-top: 4px;
+  margin-top: 10px;
 }
 
 .side-chip {
@@ -224,10 +224,96 @@ a:hover { text-decoration: underline; }
   background: #a478f010;
   border: 1px solid #a478f030;
   border-radius: 20px;
-  padding: 2px 10px;
+  padding: 3px 12px 3px 10px;
   font-weight: 500;
   white-space: nowrap;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  transition: background 0.15s, border-color 0.15s;
+  font-family: inherit;
 }
+.side-chip:hover, .side-chip[aria-expanded="true"] {
+  background: #a478f020;
+  border-color: var(--personal);
+}
+
+.chip-arrow {
+  display: inline-block;
+  width: 0; height: 0;
+  border-left: 3.5px solid transparent;
+  border-right: 3.5px solid transparent;
+  border-top: 4px solid var(--personal);
+  transition: transform 0.2s;
+}
+.side-chip[aria-expanded="true"] .chip-arrow {
+  transform: rotate(180deg);
+}
+
+/* 확장 패널 */
+.side-expand {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.3s ease;
+  margin-top: 0;
+}
+.side-expand.open {
+  grid-template-rows: 1fr;
+  margin-top: 8px;
+}
+
+.se-inner {
+  overflow: hidden;
+  border-left: 2px solid var(--personal);
+  background: #a478f008;
+  border-radius: 0 8px 8px 0;
+  padding: 0 14px;
+  opacity: 0;
+  transition: opacity 0.25s ease, padding 0.3s ease;
+}
+.side-expand.open .se-inner {
+  padding: 12px 14px;
+  opacity: 1;
+}
+
+.se-head {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+.se-head strong { font-size: 13px; color: var(--text-1); }
+.se-period { font-size: 11px; color: var(--text-3); }
+
+.se-desc {
+  font-size: 11px;
+  color: var(--text-3);
+  margin-bottom: 6px;
+}
+
+.se-metrics {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  margin-bottom: 8px;
+}
+.se-metrics li {
+  font-size: 12px;
+  color: var(--text-2);
+  padding-left: 10px;
+  position: relative;
+  line-height: 1.5;
+}
+.se-metrics li::before {
+  content: '·';
+  position: absolute;
+  left: 1px;
+  color: var(--personal);
+}
+
+.se-links { display: flex; gap: 6px; }
 
 /* ── 스택 뱃지 ── */
 .stack-group { display: flex; flex-wrap: wrap; gap: 6px; }
