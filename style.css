@@ -221,7 +221,7 @@ a:hover { text-decoration: underline; }
 
 .side-chips-label {
   font-size: 10px;
-  color: var(--personal);
+  color: var(--text-3);
   letter-spacing: 0.02em;
   margin-right: 2px;
 }
@@ -344,7 +344,7 @@ a:hover { text-decoration: underline; }
   padding: 22px 24px;
   transition: border-color 0.15s, transform 0.15s;
 }
-.project-card:hover { border-color: var(--personal); transform: translateY(-2px); }
+.project-card:hover { border-color: var(--accent); transform: translateY(-2px); }
 
 .project-header {
   display: flex; justify-content: space-between; align-items: flex-start;
@@ -363,7 +363,7 @@ a:hover { text-decoration: underline; }
 
 .project-links { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 6px; }
 .project-links a { color: var(--text-3); }
-.project-links a:hover { color: var(--personal); }
+.project-links a:hover { color: var(--accent); }
 
 /* 개인 프로젝트 카드 내부 구조 */
 .project-top { margin-bottom: 10px; }
@@ -397,19 +397,12 @@ a:hover { text-decoration: underline; }
   text-decoration: none;
 }
 .link-chip:hover {
-  border-color: var(--personal);
-  color: var(--personal);
+  border-color: var(--accent);
+  color: var(--accent);
   text-decoration: none;
 }
 
 .project-desc { font-size: 13px; color: var(--text-2); line-height: 1.7; margin-bottom: 10px; }
-
-/* 개인 프로젝트 섹션 보라색 매칭 */
-#side-projects .project-card:hover { border-color: var(--personal); }
-#side-projects .project-name { color: var(--personal); }
-#side-projects .project-category { color: var(--personal); opacity: 0.7; }
-#side-projects .hl { color: var(--personal); background: #a478f014; border-bottom-color: var(--personal); }
-#side-projects .stack { color: var(--personal); border-color: #a478f030; }
 
 /* 프로젝트 지표 리스트 */
 .project-metrics {
