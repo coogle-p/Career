@@ -92,7 +92,7 @@ a:hover { text-decoration: underline; }
 
 .contact-list { list-style: none; display: flex; flex-direction: column; gap: 8px; }
 .contact-list li { display: flex; align-items: center; gap: 8px; font-size: 12px; color: var(--text-2); }
-.contact-list .icon { font-size: 13px; flex-shrink: 0; }
+.contact-list .icon { width: 14px; height: 14px; flex-shrink: 0; color: var(--text-3); }
 .contact-list a { color: var(--text-2); font-size: 12px; word-break: break-all; }
 .contact-list a:hover { color: var(--accent); }
 
