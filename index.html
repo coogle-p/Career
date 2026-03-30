@@ -1,14 +1,364 @@
 <!doctype html>
-<html lang="en">
+<html lang="ko">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Hello World</title>
-  <link href='/style.css' rel='stylesheet'>
+  <title>박채운 — Product Manager</title>
+  <link href="/style.css" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet" />
 </head>
 <body>
-  <h1>Hello, world!</h1>
-  <button onclick="console.log('hello');">Press me</button>
-  <script defer type="text/javascript" src="/main.js"></script>
+
+  <!-- ── 사이드바 ── -->
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <div class="profile">
+        <div class="avatar"><img src="/민증.jpg" alt="박채운 프로필 사진" /></div>
+        <h1 class="name">박채운</h1>
+        <p class="title">Product Manager</p>
+        <p class="location">서울, 대한민국</p>
+      </div>
+
+      <nav class="nav">
+        <a href="#intro"         class="nav-item active">소개</a>
+        <a href="#experience"    class="nav-item">경력</a>
+        <a href="#work-projects" class="nav-item">회사 프로젝트</a>
+        <a href="#side-projects" class="nav-item">개인 프로젝트</a>
+        <a href="#skills"        class="nav-item">역량</a>
+        <a href="#education"     class="nav-item">학력</a>
+        <a href="#contact"       class="nav-item">연락처</a>
+      </nav>
+
+      <div class="sidebar-section">
+        <h3 class="sidebar-label">연락처</h3>
+        <ul class="contact-list">
+          <li><span class="icon">✉</span><a href="mailto:cw7376@gmail.com">cw7376@gmail.com</a></li>
+          <li><span class="icon">💼</span><a href="https://www.linkedin.com/in/chaewoon-park-1383891a4/" target="_blank">LinkedIn</a></li>
+          <li><span class="icon">▶</span><a href="https://www.youtube.com/@city1603" target="_blank">유튜브 (~2023)</a></li>
+          <li><span class="icon">▶</span><a href="https://www.youtube.com/@the_penciling" target="_blank">유튜브 (2025.10~)</a></li>
+          <li><span class="icon">✏</span><a href="https://brunch.co.kr/@cw7376" target="_blank">brunch.co.kr/@cw7376</a></li>
+        </ul>
+      </div>
+
+      <div class="sidebar-section">
+        <h3 class="sidebar-label">핵심 역량</h3>
+        <div class="tag-group">
+          <span class="tag">프로덕트 전략</span>
+          <span class="tag">데이터 분석</span>
+          <span class="tag">사용자 리서치</span>
+          <span class="tag">로드맵 기획</span>
+          <span class="tag">스쿼드 리드</span>
+        </div>
+      </div>
+
+    </div>
+  </aside>
+
+  <!-- ── 메인 콘텐츠 ── -->
+  <main class="main">
+
+    <!-- 01 소개 -->
+    <section id="intro" class="section">
+      <div class="section-header">
+        <span class="section-num">01</span>
+        <h2 class="section-title">소개</h2>
+      </div>
+      <div class="intro-content">
+        <p class="intro-lead">
+          데이터와 사용자 사이에서<br />
+          <strong>올바른 문제를 정의하는 PM</strong>입니다.
+        </p>
+        <p class="intro-body">
+          B2C 커머스와 B2B SaaS 도메인에서 6년간 프로덕트를 만들어 왔습니다.
+          좋은 PM은 기능을 많이 만드는 사람이 아니라, 만들지 않아야 할 기능을 골라내는 사람이라고 믿습니다.
+          정성적 리서치로 문제를 발굴하고, 정량 지표로 가설을 검증하며, 팀이 집중할 수 있도록 맥락을 만드는 일을 합니다.
+        </p>
+        <p class="intro-body">
+          엔지니어링 백그라운드 덕분에 개발팀과 구현 단위로 논의할 수 있으며,
+          비즈니스 목표와 사용자 가치가 충돌할 때 합리적인 절충점을 찾는 데 강점이 있습니다.
+        </p>
+      </div>
+    </section>
+
+    <!-- 02 경력 -->
+    <section id="experience" class="section">
+      <div class="section-header">
+        <span class="section-num">02</span>
+        <h2 class="section-title">경력</h2>
+      </div>
+      <div class="timeline">
+
+        <div class="timeline-item">
+          <div class="timeline-meta">
+            <span class="timeline-period">2022.06 — 현재</span>
+            <span class="timeline-badge">재직 중</span>
+          </div>
+          <div class="timeline-content">
+            <h3 class="company">테크스타트 주식회사</h3>
+            <p class="role">Product Manager · B2B SaaS팀</p>
+            <p class="company-desc">HR 테크 스타트업. 기업 대상 채용 관리 플랫폼 운영. 누적 투자 150억, 시리즈 B.</p>
+            <ul class="desc-list">
+              <li>채용 워크플로우 프로덕트 단독 오너십 — 고객사 320개, ARR 48억</li>
+              <li>스쿼드 (엔지니어 4, 디자이너 1) 리드, 분기별 OKR 수립 및 리뷰 주도</li>
+              <li>AI 면접 요약 기능 기획 및 출시 — 채용담당자 리뷰 소요 시간 43% 단축</li>
+              <li>가격 정책 개편 주도 (좌석제 → 사용량 기반) — 신규 계약 단가 2.1배 상승</li>
+            </ul>
+            <div class="side-chips">
+              <span class="side-chip">📱 Steady 앱 출시</span>
+              <span class="side-chip">✏ 브런치 추천 작가 선정</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-meta">
+            <span class="timeline-period">2020.03 — 2022.05</span>
+          </div>
+          <div class="timeline-content">
+            <h3 class="company">이커머스랩 주식회사</h3>
+            <p class="role">Product Manager · 커머스 플랫폼팀</p>
+            <p class="company-desc">패션 버티컬 이커머스. MAU 180만, 연 거래액 1,200억.</p>
+            <ul class="desc-list">
+              <li>검색 및 탐색 도메인 담당 — 검색 전환율 22% → 31% 개선</li>
+              <li>개인화 추천 피드 AB 테스트 설계 및 운영</li>
+              <li>리뷰 시스템 개편 기획 — 리뷰 작성율 3배, 재구매율 8%p 상승</li>
+              <li>앱 홈 화면 리뉴얼 — 세션당 페이지뷰 1.4배 증가</li>
+            </ul>
+            <div class="side-chips">
+              <span class="side-chip">📚 프로덕트 스터디 그룹 운영</span>
+              <span class="side-chip">📮 PM 인사이트 뉴스레터 창간</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-meta">
+            <span class="timeline-period">2018.07 — 2020.02</span>
+          </div>
+          <div class="timeline-content">
+            <h3 class="company">스타트업 팩토리</h3>
+            <p class="role">서비스 기획자 (Associate PM)</p>
+            <p class="company-desc">모바일 콘텐츠 플랫폼 스타트업.</p>
+            <ul class="desc-list">
+              <li>웹툰 구독 서비스 화면 기획 및 와이어프레임 작성</li>
+              <li>유저 인터뷰 진행 및 인사이트 정리, 기능 우선순위 산정 참여</li>
+              <li>CS 분류 데이터 분석으로 상위 불만 3개 항목 도출 → CS 인입 30% 감소</li>
+            </ul>
+            <div class="side-chips">
+              <span class="side-chip">✏ 브런치 기고 시작</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 03 회사 프로젝트 -->
+    <section id="work-projects" class="section">
+      <div class="section-header">
+        <span class="section-num">03</span>
+        <h2 class="section-title">회사 프로젝트</h2>
+        <p class="section-sub">재직 중 오너십을 갖고 주도한 주요 기능입니다.</p>
+      </div>
+      <div class="project-list">
+
+        <div class="project-card wide">
+          <div class="project-header">
+            <div>
+              <span class="project-company-tag">테크스타트</span>
+              <h3 class="project-name">AI 면접 요약 · 평가 보조 기능</h3>
+            </div>
+            <span class="project-period">2023.09 — 2024.02</span>
+          </div>
+          <p class="project-desc">LLM 기반 면접 답변 요약 및 역량별 자동 평가 초안 생성 기능을 기획·출시했습니다.</p>
+          <div class="project-result-grid">
+            <div class="result-item"><span class="result-num">43%</span><span class="result-label">리뷰 소요 시간 감소</span></div>
+            <div class="result-item"><span class="result-num">89%</span><span class="result-label">기능 만족도</span></div>
+            <div class="result-item"><span class="result-num">+27%p</span><span class="result-label">갱신율 변화</span></div>
+          </div>
+          <div class="stack-group">
+            <span class="stack">문제 정의</span>
+            <span class="stack">사용자 인터뷰</span>
+            <span class="stack">PRD 작성</span>
+            <span class="stack">LLM 프롬프트 설계</span>
+          </div>
+        </div>
+
+        <div class="project-card wide">
+          <div class="project-header">
+            <div>
+              <span class="project-company-tag">테크스타트</span>
+              <h3 class="project-name">가격 정책 개편 — 좌석제 → 사용량 기반</h3>
+            </div>
+            <span class="project-period">2023.03 — 2023.07</span>
+          </div>
+          <p class="project-desc">세일즈 피드백과 이탈 인터뷰를 기반으로 사용량 기반 과금 모델 전환을 제안하고 내부 설득부터 출시까지 주도했습니다.</p>
+          <div class="project-result-grid">
+            <div class="result-item"><span class="result-num">2.1×</span><span class="result-label">신규 계약 평균 단가</span></div>
+            <div class="result-item"><span class="result-num">+38%</span><span class="result-label">SMB 신규 계약 수</span></div>
+            <div class="result-item"><span class="result-num">-12%p</span><span class="result-label">초기 이탈률</span></div>
+          </div>
+          <div class="stack-group">
+            <span class="stack">비즈니스 분석</span>
+            <span class="stack">고객 인터뷰</span>
+            <span class="stack">가격 모델링</span>
+            <span class="stack">이해관계자 설득</span>
+          </div>
+        </div>
+
+        <div class="project-card wide">
+          <div class="project-header">
+            <div>
+              <span class="project-company-tag">이커머스랩</span>
+              <h3 class="project-name">검색 경험 개선 — 의도 분류 & 재랭킹</h3>
+            </div>
+            <span class="project-period">2021.04 — 2021.10</span>
+          </div>
+          <p class="project-desc">검색 로그 분석에서 이탈 비율이 높은 쿼리 유형을 분류하고, ML팀과 협업해 재랭킹 로직을 개선했습니다.</p>
+          <div class="project-result-grid">
+            <div class="result-item"><span class="result-num">22→31%</span><span class="result-label">검색 전환율</span></div>
+            <div class="result-item"><span class="result-num">-34%</span><span class="result-label">무결과 검색 비율</span></div>
+          </div>
+          <div class="stack-group">
+            <span class="stack">로그 분석</span>
+            <span class="stack">ML팀 협업</span>
+            <span class="stack">AB 테스트</span>
+            <span class="stack">Amplitude</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 04 개인 프로젝트 -->
+    <section id="side-projects" class="section">
+      <div class="section-header">
+        <span class="section-num">04</span>
+        <h2 class="section-title">개인 프로젝트</h2>
+        <p class="section-sub">업무 외 시간에 자발적으로 만들거나 기여한 활동입니다.</p>
+      </div>
+      <div class="project-grid">
+
+        <div class="project-card">
+          <div class="project-header">
+            <h3 class="project-name">PM 인사이트 뉴스레터</h3>
+            <div class="project-links"><a href="#" target="_blank">구독 링크</a></div>
+          </div>
+          <p class="project-desc">국내외 프로덕트 사례와 PM 방법론을 격주로 큐레이션. 구독자 2,400명, 오픈율 평균 41%.</p>
+          <div class="stack-group"><span class="stack">Substack</span><span class="stack">콘텐츠 기획</span></div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-header">
+            <h3 class="project-name">프로덕트 스터디 그룹 운영</h3>
+          </div>
+          <p class="project-desc">현직 PM 12명이 모여 월 2회 케이스 스터디를 진행하는 소모임 운영. Inspired, Continuous Discovery Habits 원서 스터디 병행.</p>
+          <div class="stack-group"><span class="stack">커뮤니티</span><span class="stack">퍼실리테이션</span></div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-header">
+            <h3 class="project-name">독립 앱 — 루틴 트래커 「Steady」</h3>
+            <div class="project-links"><a href="#" target="_blank">App Store</a></div>
+          </div>
+          <p class="project-desc">기획부터 외주 개발 발주, 마케팅, CS까지 1인 PM으로 운영 중인 사이드 프로덕트. 출시 3개월 만에 DAU 800, 유료 전환율 6.2%.</p>
+          <div class="stack-group"><span class="stack">0→1 기획</span><span class="stack">외주 관리</span><span class="stack">그로스</span></div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-header">
+            <h3 class="project-name">브런치 기고 — PM의 일</h3>
+            <div class="project-links"><a href="https://brunch.co.kr/@cw7376" target="_blank">브런치</a></div>
+          </div>
+          <p class="project-desc">PM 커리어, 협업, 의사결정 과정을 주제로 글을 씁니다. 총 조회수 22만, 카카오 브런치 추천 작가 선정.</p>
+          <div class="stack-group"><span class="stack">글쓰기</span><span class="stack">지식 공유</span></div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 05 역량 -->
+    <section id="skills" class="section">
+      <div class="section-header">
+        <span class="section-num">05</span>
+        <h2 class="section-title">역량</h2>
+      </div>
+      <div class="skill-grid">
+
+        <div class="skill-group">
+          <h3 class="skill-category">프로덕트 기획</h3>
+          <div class="skill-list">
+            <div class="skill-item"><span class="skill-name">문제 정의 / 기회 발굴</span><div class="skill-bar"><div class="skill-fill" style="width:95%"></div></div></div>
+            <div class="skill-item"><span class="skill-name">PRD / 기능 명세 작성</span><div class="skill-bar"><div class="skill-fill" style="width:92%"></div></div></div>
+            <div class="skill-item"><span class="skill-name">로드맵 수립 / OKR 관리</span><div class="skill-bar"><div class="skill-fill" style="width:88%"></div></div></div>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <h3 class="skill-category">리서치 & 데이터</h3>
+          <div class="skill-list">
+            <div class="skill-item"><span class="skill-name">사용자 인터뷰 / UT</span><div class="skill-bar"><div class="skill-fill" style="width:90%"></div></div></div>
+            <div class="skill-item"><span class="skill-name">AB 테스트 설계 / 분석</span><div class="skill-bar"><div class="skill-fill" style="width:85%"></div></div></div>
+            <div class="skill-item"><span class="skill-name">SQL (데이터 직접 추출)</span><div class="skill-bar"><div class="skill-fill" style="width:75%"></div></div></div>
+            <div class="skill-item"><span class="skill-name">Amplitude / Mixpanel</span><div class="skill-bar"><div class="skill-fill" style="width:82%"></div></div></div>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <h3 class="skill-category">협업 & 커뮤니케이션</h3>
+          <div class="skill-list">
+            <div class="skill-item"><span class="skill-name">스쿼드 / 스프린트 운영</span><div class="skill-bar"><div class="skill-fill" style="width:90%"></div></div></div>
+            <div class="skill-item"><span class="skill-name">이해관계자 관리 / 설득</span><div class="skill-bar"><div class="skill-fill" style="width:85%"></div></div></div>
+            <div class="skill-item"><span class="skill-name">Figma (리뷰 / 프로토타입)</span><div class="skill-bar"><div class="skill-fill" style="width:70%"></div></div></div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 06 학력 -->
+    <section id="education" class="section">
+      <div class="section-header">
+        <span class="section-num">06</span>
+        <h2 class="section-title">학력 · 교육</h2>
+      </div>
+      <div class="edu-list">
+        <div class="edu-item">
+          <span class="edu-period">2014.03 — 2018.02</span>
+          <div class="edu-content"><h3 class="edu-school">한국대학교</h3><p class="edu-major">경영정보학과 학사 졸업</p></div>
+        </div>
+        <div class="edu-item">
+          <span class="edu-period">2023</span>
+          <div class="edu-content"><h3 class="edu-school">Google Analytics 4 인증</h3><p class="edu-major">Google</p></div>
+        </div>
+        <div class="edu-item">
+          <span class="edu-period">2022</span>
+          <div class="edu-content"><h3 class="edu-school">SQL 기반 데이터 분석 과정 수료</h3><p class="edu-major">패스트캠퍼스</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 07 연락처 -->
+    <section id="contact" class="section">
+      <div class="section-header">
+        <span class="section-num">07</span>
+        <h2 class="section-title">연락처</h2>
+      </div>
+      <div class="contact-box">
+        <p class="contact-desc">새로운 기회, 협업 제안, 혹은 단순한 안녕 인사도 환영합니다.</p>
+        <a href="mailto:cw7376@gmail.com" class="contact-btn">이메일 보내기</a>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <p>© 2026 박채운. All rights reserved.</p>
+    </footer>
+
+  </main>
+
+  <script defer src="/main.js"></script>
 </body>
 </html>
