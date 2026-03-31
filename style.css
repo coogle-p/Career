@@ -463,6 +463,15 @@ a:hover { text-decoration: underline; }
   color: var(--accent);
   text-decoration: none;
 }
+
+.link-chip.case-link {
+  border-color: var(--accent);
+  color: var(--accent);
+  font-weight: 600;
+}
+.link-chip.case-link:hover {
+  background: var(--accent-dim);
+}
 .metric-sub-links {
   display: flex;
   gap: 6px;
@@ -668,17 +677,26 @@ a:hover { text-decoration: underline; }
   .intro-body { font-size: 14px; }
 
   /* 타임라인 → 단일 컬럼 */
-  .timeline-item { grid-template-columns: 1fr; }
+  .timeline-item {
+    grid-template-columns: 1fr;
+    padding-bottom: 32px;
+    margin-bottom: 24px;
+    border-bottom: 1px solid var(--border);
+  }
+  .timeline-item:last-child { border-bottom: none; margin-bottom: 0; }
   .timeline-item::before, .timeline-item::after { display: none; }
   .timeline-meta {
     align-items: flex-start;
     flex-direction: row;
     gap: 8px;
-    margin-bottom: 6px;
+    margin-bottom: 10px;
   }
   .timeline-content { padding-left: 0; }
-  .company { font-size: 15px; }
-  .company-desc { font-size: 11px; }
+  .company { font-size: 16px; margin-bottom: 4px; }
+  .role { margin-bottom: 8px; }
+  .company-desc { font-size: 11px; margin-bottom: 14px; }
+  .desc-list { gap: 8px; }
+  .desc-list li { font-size: 13px; line-height: 1.7; }
 
   /* 회사 프로젝트 카드 */
   .project-header { flex-direction: column; gap: 4px; }
