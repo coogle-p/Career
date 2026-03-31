@@ -38,6 +38,17 @@ skillFills.forEach((el) => {
   skillObserver.observe(el);
 });
 
+// ── 맨 위로 버튼 ──
+const scrollTopBtn = document.getElementById('scrollTop');
+if (scrollTopBtn) {
+  window.addEventListener('scroll', () => {
+    scrollTopBtn.classList.toggle('visible', window.scrollY > 400);
+  });
+  scrollTopBtn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+}
+
 // ── 개인 프로젝트 인라인 확장 토글 ──
 document.querySelectorAll('.side-chip').forEach((btn) => {
   btn.addEventListener('click', () => {
