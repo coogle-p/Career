@@ -536,24 +536,72 @@ a:hover { text-decoration: underline; }
 /* ── 반응형 ── */
 @media (max-width: 900px) {
   .project-grid { grid-template-columns: 1fr; }
+  .main { padding: 48px 36px; }
 }
 
 @media (max-width: 768px) {
   :root { --sidebar-w: 0px; }
 
+  /* 사이드바 → 상단 배치 */
+  body { flex-direction: column; }
+
   .sidebar {
     position: relative; width: 100%; min-height: auto;
     border-right: none; border-bottom: 1px solid var(--border);
   }
-  .sidebar-inner { padding: 28px 20px; }
-  .main { margin-left: 0; padding: 32px 20px; }
+  .sidebar-inner { padding: 24px 20px; gap: 24px; }
+  .main { margin-left: 0; padding: 28px 16px; max-width: 100%; }
 
+  /* 섹션 여백 축소 */
+  .section { padding-bottom: 48px; margin-bottom: 48px; }
+  .section-header { margin-bottom: 24px; flex-wrap: wrap; }
+  .section-sub { width: 100%; margin-left: 0; margin-top: 4px; }
+
+  /* 소개 */
+  .intro-lead { font-size: 20px; }
+  .intro-body { font-size: 14px; }
+
+  /* 타임라인 → 단일 컬럼 */
   .timeline-item { grid-template-columns: 1fr; }
   .timeline-item::before, .timeline-item::after { display: none; }
-  .timeline-meta { align-items: flex-start; }
+  .timeline-meta {
+    align-items: flex-start;
+    flex-direction: row;
+    gap: 8px;
+    margin-bottom: 6px;
+  }
   .timeline-content { padding-left: 0; }
+  .company { font-size: 15px; }
+  .company-desc { font-size: 11px; }
 
-  .skill-item { grid-template-columns: 140px 1fr; }
-  .edu-item   { grid-template-columns: 1fr; gap: 4px; }
+  /* 회사 프로젝트 카드 */
+  .project-header { flex-direction: column; gap: 4px; }
+  .project-name { font-size: 14px; }
+  .project-result-grid { gap: 16px; }
+  .result-num { font-size: 18px; }
+
+  /* 개인 프로젝트 카드 */
+  .project-card { padding: 18px 16px 16px; }
+  .project-title-row { flex-wrap: wrap; gap: 8px; }
+  .project-logo { width: 28px; height: 28px; border-radius: 6px; }
+  .project-name { font-size: 14px; }
+  .project-links { gap: 4px; }
+  .link-chip { font-size: 10px; padding: 2px 7px; }
+  .metric-sub-links { flex-wrap: wrap; }
+
+  /* 역량 */
+  .skill-item { grid-template-columns: 120px 1fr; gap: 10px; }
+  .skill-name { font-size: 12px; }
+
+  /* 학력 */
+  .edu-item { grid-template-columns: 1fr; gap: 4px; }
   .edu-period { text-align: left; }
+
+  /* 연락처 */
+  .contact-box { padding: 28px 20px; }
+  .contact-btn { padding: 10px 24px; font-size: 13px; }
+
+  /* 인라인 확장 패널 */
+  .side-expand.open .se-inner { padding: 10px 12px; }
+  .se-head { flex-wrap: wrap; }
 }
