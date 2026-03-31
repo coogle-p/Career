@@ -1,0 +1,754 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pacemaker — Case Study</title>
+  <link href="case.css" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <nav class="case-nav">
+    <a href="/" class="case-nav-back">← 이력서로 돌아가기</a>
+    <span class="case-nav-title">Case Study · Pacemaker</span>
+  </nav>
+
+  <!-- ━━ 히어로 ━━ -->
+  <section class="case-hero">
+    <span class="case-hero-badge">Pacemaker</span>
+    <h1>달리기를 혼자 하지 않게 만드는<br />소셜 러닝 앱</h1>
+    <p class="case-hero-desc">
+      누적 가입자 2,435명, 러닝 18,543회, 총 75,757km.
+      "혼자 달리는 사람들"에게 소셜 동기를 부여해 지속률을 높이려 했던 2년 반의 여정입니다.
+      피드 리디자인, 실시간 응원 실험, AI 코칭 도입 — 세 가지 사례를 통해
+      데이터 기반 의사결정과 실패에서 배운 것을 기록합니다.
+    </p>
+    <div class="case-meta">
+      <div class="case-meta-item"><span class="case-meta-label">기간</span><span class="case-meta-value">2023.02 — 2025.08</span></div>
+      <div class="case-meta-item"><span class="case-meta-label">역할</span><span class="case-meta-value">PM · UX 기획 전담</span></div>
+      <div class="case-meta-item"><span class="case-meta-label">팀</span><span class="case-meta-value">2 → 5명</span></div>
+      <div class="case-meta-item"><span class="case-meta-label">누적 가입자</span><span class="case-meta-value">2,435명</span></div>
+    </div>
+  </section>
+
+  <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+       Case 1 — 피드 리디자인
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+
+  <section class="case-section">
+    <span class="case-section-label">Case 1 · Problem</span>
+    <h2>핵심 기능은 있었지만, 얼굴이 뒷받침하지 못했다</h2>
+    <p>
+      팀에 합류했을 때, Pacemaker에는 이미 <strong>라이브 러닝(실시간 달리기 응원)</strong>이라는
+      핵심 기능이 있었습니다. 하지만 앱의 첫인상인 피드 화면은 인스타그램 스토리를 그대로 따라한
+      구조였고, 전반적으로 투박한 디자인이 소셜 앱으로서의 매력을 전달하지 못하고 있었습니다.
+    </p>
+    <div class="case-highlight">
+      <p>
+        <strong>문제 인식:</strong> 라이브 러닝이라는 차별화 기능은 존재하지만,
+        피드의 디자인 퀄리티가 "이 앱을 계속 쓰고 싶다"는 감정을 만들지 못하고 있었습니다.
+        소셜 앱에서 피드는 단순히 기록을 보여주는 곳이 아니라, <strong>다른 사람의 활동을 보고
+        "나도 달려야겠다"는 동기를 불러일으키는 공간</strong>이 되어야 했습니다.
+      </p>
+    </div>
+  </section>
+
+  <section class="case-section">
+    <span class="case-section-label">Case 1 · Approach</span>
+    <h2>인스타 라이브 × 본디 캐릭터 → 러닝 카드</h2>
+    <div class="case-process">
+      <div class="case-step">
+        <span class="case-step-num">1</span>
+        <div class="case-step-content">
+          <h3>라이브 러닝 UI 재설계</h3>
+          <p>라이브 러닝은 SNS라는 본질에서 <strong>인스타그램 라이브</strong> 개념을 차용했습니다. 누군가가 지금 달리고 있다는 실시간성을 강조하고, 응원을 보내는 인터랙션을 직관적으로 만들었습니다.</p>
+        </div>
+      </div>
+      <div class="case-step">
+        <span class="case-step-num">2</span>
+        <div class="case-step-content">
+          <h3>러닝 카드 컨셉 도입</h3>
+          <p>달리기 포스트는 <strong>본디(Bondee)의 캐릭터 패키지</strong>에서 영감을 받아 <strong>러닝 카드</strong>라는 개념으로 접근했습니다. 달리기 기록을 마치 선물 패키지처럼 시각적으로 포장해, 피드에서 "보는 즐거움"을 만들었습니다.</p>
+        </div>
+      </div>
+      <div class="case-step">
+        <span class="case-step-num">3</span>
+        <div class="case-step-content">
+          <h3>무드 전환 — 힙하고 액티브한 영 톤</h3>
+          <p>달리기라는 테마에 맞게 전체 비주얼을 힙하고 액티브하고 영한 무드로 전환했습니다. 컬러, 타이포그래피, 아이콘 시스템을 전면 교체하며 브랜드 아이덴티티를 재정립했습니다.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 무드보드 Before / After -->
+    <div class="compare-grid compact mini">
+      <div class="compare-item">
+        <span class="compare-label before">Before</span>
+        <img src="img/pacemaker-before.png" alt="기존 무드보드" />
+      </div>
+      <div class="compare-item">
+        <span class="compare-label after">After</span>
+        <img src="img/pacemaker-after.png" alt="신규 무드보드" />
+      </div>
+    </div>
+  </section>
+
+  <!-- 화면별 Before 행 → After 행 -->
+  <div class="case-compare">
+    <div class="compare-row-label before">Before — v1.7</div>
+    <div class="compare-row">
+      <img src="img/pacemaker-before-1.png" alt="기존 피드" />
+      <img src="img/pacemaker-before-2.png" alt="기존 러닝" />
+      <img src="img/pacemaker-before-3.png" alt="기존 프로필" />
+      <img src="img/pacemaker-before-4.png" alt="기존 기록" />
+      <img src="img/pacemaker-before-5.png" alt="기존 결과" />
+    </div>
+    <div class="compare-row-label after">After — v1.8.0</div>
+    <div class="compare-row">
+      <img src="img/pacemaker-after-1.jpg" alt="신규 피드" />
+      <img src="img/pacemaker-after-2.jpg" alt="신규 러닝" />
+      <img src="img/pacemaker-after-3.png" alt="신규 프로필" />
+      <img src="img/pacemaker-after-4.png" alt="신규 기록" />
+      <img src="img/pacemaker-after-5.png" alt="신규 결과" />
+    </div>
+    <p class="case-img-caption">투박한 기존 UI → 러닝 카드 기반 힙한 무드로 전면 전환</p>
+  </div>
+
+  <section class="case-section">
+    <span class="case-section-label">Case 1 · Result</span>
+    <h2>v1.8.0 릴리즈 — 모든 지표가 동시에 점프</h2>
+    <p>
+      2023년 6월 5일 v1.8.0 릴리즈와 동시에 거의 모든 핵심 지표가 상승했습니다.
+    </p>
+    <div class="case-results">
+      <div class="case-result-card">
+        <div class="case-result-num">+86%</div>
+        <div class="case-result-label">신규 가입 (22→41명)</div>
+      </div>
+      <div class="case-result-card">
+        <div class="case-result-num">+74%</div>
+        <div class="case-result-label">MAU (27→47명)</div>
+      </div>
+      <div class="case-result-card">
+        <div class="case-result-num">+65%</div>
+        <div class="case-result-label">WAU (9.6→15.8명)</div>
+      </div>
+      <div class="case-result-card">
+        <div class="case-result-num">16.5%</div>
+        <div class="case-result-label">러닝 전환율 (11.1%→)</div>
+      </div>
+    </div>
+
+    <div class="case-highlight">
+      <p>
+        <strong>핵심 인사이트:</strong> 신규 가입만 늘었다면 외부 요인(마케팅, 계절성)일 수 있지만,
+        <strong>러닝 전환율이 11.1% → 16.5%로 동반 상승</strong>한 것이 중요합니다.
+        기존 유저가 피드를 더 자주 보게 되면서 "나도 달려야겠다"는 소셜 동기가 강화된 결과입니다.
+        7월에 신규 가입은 줄었지만 MAU 42명이 유지된 것은 리텐션 효과를 시사합니다.
+      </p>
+    </div>
+
+    <p>
+      이 피드 위에 v1.9.0(2023-07-10)에서 <strong>러닝 카드 포스팅</strong>,
+      v1.12.0(2023-08-21)에서 <strong>이미지 공유</strong>,
+      v2.0.7(2023-11-01)에서 <strong>인스타그램 공유</strong>로 이어지며
+      피드가 "보는 공간"에서 "만들고 공유하는 공간"으로 진화했습니다.
+      최종적으로 좋아요 <strong>54,715건</strong>, 댓글 <strong>32,952건</strong>의
+      커뮤니티 인터랙션으로 이어졌습니다.
+    </p>
+  </section>
+
+  <div class="case-img">
+    <canvas id="chart-case1" width="736" height="300"></canvas>
+    <p class="case-img-caption">v1.8.0(6월) 릴리즈 전후 4개월 비교. MAU +74%, 전환율 11.1% → 16.5%</p>
+  </div>
+
+  <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+       Case 2 — 2024년 전환율·리텐션 실험
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+
+  <section class="case-section">
+    <span class="case-section-label">Case 2 · Problem</span>
+    <h2>가입은 느는데, 달리지 않는다</h2>
+    <p>
+      2024년 페이스메이커는 가입자가 꾸준히 늘었지만, <strong>달리기 전환율은 하락세</strong>였습니다.
+      2023년 평균 12.7%였던 전환율이 2024년 상반기 7.5%로 떨어졌습니다.
+      가입만 하고 달리지 않는 유저가 늘어나는 구조적 문제를 해결해야 했습니다.
+    </p>
+  </section>
+
+  <section class="case-section">
+    <span class="case-section-label">Case 2 · Experiment</span>
+    <h2>두 가지 시도, 두 가지 실패</h2>
+    <div class="case-process">
+      <div class="case-step">
+        <span class="case-step-num">1</span>
+        <div class="case-step-content">
+          <h3>튜토리얼 (v2.3.1, 2024-05)</h3>
+          <p>첫 러닝까지의 허들을 낮추기 위해 온보딩 튜토리얼을 추가. 결과: 전환율 변화 미미(8.7% → 9.8%). 계절적 상승(봄→여름)과 구분되지 않는 수준.</p>
+        </div>
+      </div>
+      <div class="case-step">
+        <span class="case-step-num">2</span>
+        <div class="case-step-content">
+          <h3>함께달리기 (v2.4.1, 2024-09)</h3>
+          <p>듀오링고의 프렌드 스트릭을 벤치마킹 — 두 명이 주 1회 이상 각자 달리면 스트릭이 쌓이는 구조.
+            결과: <strong>MAU 완전 정체(92 → 92)</strong>, 이후 하락. 출시 다음날 긴급 버그 수정(v2.4.2), 6개월 후(v2.9.3) 재수정. 현재 기능 제거 상태.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 함께달리기 스크린샷 -->
+    <div class="case-img" style="margin-top:24px;">
+      <div class="case-img-placeholder" style="border:1px dashed var(--border); border-radius:12px; padding:40px; text-align:center; color:var(--text-3); font-size:13px;">
+        함께달리기 UI 스크린샷 (이미지 첨부 예정)
+      </div>
+    </div>
+
+    <div class="case-img" style="margin-top:24px;">
+      <table class="case-table">
+        <thead>
+          <tr><th>지표</th><th>출시 전 (9월)</th><th>+1개월</th><th>+2개월</th><th>+3개월</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>MAU</td><td>92</td><td><strong>92</strong></td><td>81</td><td>49</td></tr>
+          <tr><td>WAU</td><td>31.2</td><td>37.6</td><td>29.6</td><td>22.0</td></tr>
+          <tr><td>전환율</td><td>9.3%</td><td>8.6%</td><td>7.1%</td><td>4.2%</td></tr>
+        </tbody>
+      </table>
+      <p class="case-img-caption">함께달리기 출시 전후 — MAU 변화 없이 하락세 진입</p>
+    </div>
+
+    <div class="case-learning">
+      <p class="case-learning-title">왜 실패했나</p>
+      <p>
+        튜토리얼은 "왜 달려야 하는지"를 설명하지 못했고,
+        함께달리기는 <strong>MAU 92명 규모에서 "동시에 달리는 친구"가 존재할 확률이 너무 낮았습니다</strong>.
+        네트워크 효과가 필요한 기능을 임계치(critical mass) 도달 전에 출시한 셈이었습니다.
+      </p>
+    </div>
+  </section>
+
+  <section class="case-section">
+    <span class="case-section-label">Case 2 · 전환</span>
+    <h2>"달린 후의 보상"에 집중하다</h2>
+    <p>
+      실패를 통해 방향을 바꿨습니다. 새로운 기능을 추가하는 대신,
+      <strong>"달리고 나서 좋았다"는 경험의 밀도를 높이는 것</strong>에 집중했습니다.
+    </p>
+    <div class="case-process">
+      <div class="case-step">
+        <span class="case-step-num">1</span>
+        <div class="case-step-content">
+          <h3>러닝 카드 리뉴얼 (v2.7.0, 2025-01)</h3>
+          <p>달리기 기록을 시각적으로 매력적인 카드로 재구성. 최근 사용 카드가 상단에 노출되도록 개선해 "기록 → 공유"까지의 흐름을 자연스럽게.</p>
+        </div>
+      </div>
+      <div class="case-step">
+        <span class="case-step-num">2</span>
+        <div class="case-step-content">
+          <h3>순위 변동 대시보드 + 웰컴 카드 (v2.9.0, 2025-03)</h3>
+          <p>달리기가 끝나면 리더보드에서 내 순위가 어떻게 변했는지 바로 확인. 신규 유저에게는 웰컴 카드로 첫 달리기까지의 동기를 부여.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="case-section">
+    <span class="case-section-label">Case 2 · Result</span>
+    <h2>MAU +126%, 꺾이지 않는 성장</h2>
+    <div class="case-results">
+      <div class="case-result-card">
+        <div class="case-result-num">+126%</div>
+        <div class="case-result-label">MAU (34→77명, 1개월)</div>
+      </div>
+      <div class="case-result-card">
+        <div class="case-result-num">+87%</div>
+        <div class="case-result-label">WAU (17.8→33.2명)</div>
+      </div>
+      <div class="case-result-card">
+        <div class="case-result-num">5.92%</div>
+        <div class="case-result-label">전환율 (2.79%→)</div>
+      </div>
+      <div class="case-result-card">
+        <div class="case-result-num">98명</div>
+        <div class="case-result-label">MAU 3개월 후에도 우상향</div>
+      </div>
+    </div>
+
+    <div class="case-img" style="margin-top:24px;">
+      <table class="case-table">
+        <thead>
+          <tr><th></th><th>2024년 2→3월</th><th>2025년 2→3월</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>MAU 변화</td><td>32 → 43 <strong>(+34%)</strong></td><td>34 → 77 <strong>(+126%)</strong></td></tr>
+          <tr><td>WAU 변화</td><td>10.0 → 16.6 <strong>(+66%)</strong></td><td>17.8 → 33.2 <strong>(+87%)</strong></td></tr>
+          <tr><td>신규가입</td><td>23 → 30 <strong>(+30%)</strong></td><td>18 → 83 <strong>(+361%)</strong></td></tr>
+        </tbody>
+      </table>
+      <p class="case-img-caption">전년 동기 대비 — 계절적 반등을 넘어서는 구조적 성장</p>
+    </div>
+
+    <div class="case-highlight">
+      <p>
+        <strong>핵심 인사이트:</strong> 매년 봄에 계절 반등이 있지만, 2025년은 전년 대비
+        MAU 3.7배, 신규가입 12배 차이. 반등 후에도 꺾이지 않고 5월 MAU 98명까지 우상향.
+        <strong>"기능을 더하는 것"이 아니라 "달린 후가 좋아지는 것"</strong>이 전환율과 리텐션을 동시에 움직인 결과입니다.
+      </p>
+    </div>
+  </section>
+
+  <div class="case-img">
+    <canvas id="chart-case2" width="736" height="320"></canvas>
+    <p class="case-img-caption">2024 실패(튜토리얼·함께달리기) → 2025 전환(러닝카드·대시보드·웰컴카드) → MAU +126%</p>
+  </div>
+
+  <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+       Case 3 — AI 코칭 도입
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+
+  <section class="case-section">
+    <span class="case-section-label">Case 3 · Approach</span>
+    <h2>AI 음성 코칭 — "달린 후"를 "달리는 중"으로 확장</h2>
+    <p>
+      리텐션 실험에서 얻은 러닝("달린 후의 보상이 중요하다")을 한 단계 더 밀어,
+      <strong>"달리는 중에 실시간으로 피드백을 주면 어떨까?"</strong>라는 가설을 세웠습니다.
+      2025년 5월 v2.12.0에서 AI 코치 선택 기능을, 6월 v2.13.0에서 음성 응원 기능을 출시했습니다.
+    </p>
+    <div class="case-process">
+      <div class="case-step">
+        <span class="case-step-num">1</span>
+        <div class="case-step-content">
+          <h3>v2.6.0 — 1km마다 현재 페이스 읽어주기</h3>
+          <p>2025년 1월, 가장 간단한 형태로 시작. 러닝 중 1킬로미터마다 현재 페이스를 음성으로 알려주는 기능.</p>
+        </div>
+      </div>
+      <div class="case-step">
+        <span class="case-step-num">2</span>
+        <div class="case-step-content">
+          <h3>v2.8.0 — AI 러닝 피드백</h3>
+          <p>2월, 러닝 데이터를 기반으로 맞춤형 피드백을 생성. 단순 페이스 알림에서 코칭으로 진화.</p>
+        </div>
+      </div>
+      <div class="case-step">
+        <span class="case-step-num">3</span>
+        <div class="case-step-content">
+          <h3>v2.12.0 ~ v2.19.0 — AI 버디 시스템</h3>
+          <p>5월부터 AI 코치를 선택하고 텍스트/음성 채팅을 할 수 있는 버디 시스템으로 확장. 러닝 중 AI와 음성으로 대화할 수 있는 수준까지 발전.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="case-section">
+    <span class="case-section-label">Case 3 · Result</span>
+    <h2>AI 코칭 도입 후 성장 곡선</h2>
+    <div class="case-results">
+      <div class="case-result-card">
+        <div class="case-result-num">34.5%</div>
+        <div class="case-result-label">AI 코칭 활성화 비율</div>
+      </div>
+      <div class="case-result-card">
+        <div class="case-result-num">51,128</div>
+        <div class="case-result-label">AI 피드백 누적 생성</div>
+      </div>
+      <div class="case-result-card">
+        <div class="case-result-num">185명</div>
+        <div class="case-result-label">MAU 피크 (2025.10)</div>
+      </div>
+      <div class="case-result-card">
+        <div class="case-result-num">+88%</div>
+        <div class="case-result-label">평균 MAU YoY (24→25)</div>
+      </div>
+    </div>
+    <p>
+      AI 코칭이 도입된 2025년의 평균 MAU는 115.5명으로, 2024년(61.3명) 대비 <strong>88.4% 성장</strong>.
+      WAU는 48.7명으로 2024년(22.7명) 대비 <strong>114.5% 성장</strong>했습니다.
+      전체 러닝의 34.5%(6,404회)에서 AI 코칭이 활성화되었고, 누적 51,128건의 피드백이 생성되었습니다.
+    </p>
+
+    <div class="case-highlight">
+      <p>
+        <strong>콘텐츠 생산-소비 루프의 완성:</strong>
+        피드 리디자인(보는 경험) → 러닝 카드 포스팅(만드는 경험) → 이미지 공유(퍼지는 경험) → 인스타 공유(외부 유입)의 루프가
+        최종적으로 좋아요 <strong>54,715건</strong>, 댓글 <strong>32,952건</strong>,
+        팔로우 <strong>3,376건</strong>의 커뮤니티 인터랙션을 만들어냈습니다.
+      </p>
+    </div>
+  </section>
+
+  <div class="case-img">
+    <canvas id="chart-case3" width="736" height="280"></canvas>
+    <p class="case-img-caption">연도별 비교. 가입자 354→663→1,027명. MAU 41→61→116명. WAU 14→23→49명</p>
+  </div>
+
+  <!-- ━━ 전체 러닝 ━━ -->
+  <section class="case-section">
+    <span class="case-section-label">Overall Learning</span>
+    <h2>2년 반의 프로덕트 운영에서 배운 것</h2>
+
+    <div class="case-learning">
+      <p class="case-learning-title">디자인은 기능이다</p>
+      <p>
+        피드 리디자인이 단순 UI 변경이 아니라 MAU +74%, 전환율 +49%라는 숫자로 증명되었습니다.
+        소셜 앱에서 디자인은 장식이 아니라, <strong>행동을 유도하는 기능</strong>입니다.
+      </p>
+    </div>
+
+    <div class="case-learning">
+      <p class="case-learning-title">팀 스케일링 — 2명에서 5명으로</p>
+      <p>
+        "내가 다 하는 게 빠르다"는 관성을 버리는 데 시간이 걸렸습니다.
+        역할 경계를 명확히 나누고, 주간 스프린트 리뷰를 도입한 뒤에야
+        각자의 속도가 팀의 속도가 되는 경험을 했습니다.
+        <strong>PM의 일은 빠르게 만드는 것이 아니라
+        팀이 빠르게 만들 수 있는 환경을 만드는 것</strong>입니다.
+      </p>
+    </div>
+
+    <div class="case-learning">
+      <p class="case-learning-title">계절성과 싸우지 않기</p>
+      <p>
+        매년 12~2월 MAU가 급락하는 패턴을 3년 연속 확인했습니다.
+        처음에는 겨울에도 지표를 올리려 했지만, 결국 <strong>계절성은 바꿀 수 없는 외부 변수</strong>라는 것을 받아들이고
+        봄(3~4월)에 집중적으로 기능을 출시하는 전략으로 전환했습니다.
+      </p>
+    </div>
+  </section>
+
+  <!-- 하단 네비 -->
+  <nav class="case-footer-nav">
+    <a href="/case/secondthoughts.html" class="case-footer-link">← 이전 <strong>SecondThoughts</strong></a>
+    <a href="/case/busco.html" class="case-footer-link">다음 케이스 → <strong>Busco</strong></a>
+  </nav>
+
+  <script>
+    // Before/After 탭 전환
+    document.querySelectorAll('.compare-tab').forEach(tab => {
+      tab.addEventListener('click', () => {
+        const group = tab.closest('.case-compare');
+        group.querySelectorAll('.compare-tab').forEach(t => t.classList.remove('active'));
+        group.querySelectorAll('.compare-panel').forEach(p => p.classList.remove('active'));
+        tab.classList.add('active');
+        document.getElementById(tab.dataset.panel).classList.add('active');
+      });
+    });
+
+    // ── 차트 유틸 ──
+    const C = {
+      accent: '#6c8cf5',
+      personal: '#a478f0',
+      green: '#4ade80',
+      text3: '#55556a',
+      text2: '#a0a0b0',
+      border: '#2a2a30',
+      bg: '#0e0e10',
+    };
+
+    function setupCanvas(id) {
+      const canvas = document.getElementById(id);
+      const dpr = window.devicePixelRatio || 1;
+      const rect = canvas.getBoundingClientRect();
+      canvas.width = rect.width * dpr;
+      canvas.height = rect.height * dpr;
+      canvas.style.width = rect.width + 'px';
+      canvas.style.height = rect.height + 'px';
+      const ctx = canvas.getContext('2d');
+      ctx.scale(dpr, dpr);
+      return { ctx, w: rect.width, h: rect.height };
+    }
+
+    function drawLine(ctx, points, w, h, pad, maxY, color, dotSize) {
+      const stepX = (w - pad.l - pad.r) / (points.length - 1);
+      ctx.strokeStyle = color;
+      ctx.lineWidth = 2;
+      ctx.lineJoin = 'round';
+      ctx.beginPath();
+      points.forEach((v, i) => {
+        const x = pad.l + i * stepX;
+        const y = h - pad.b - ((v / maxY) * (h - pad.t - pad.b));
+        if (i === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
+      });
+      ctx.stroke();
+      if (dotSize) {
+        points.forEach((v, i) => {
+          const x = pad.l + i * stepX;
+          const y = h - pad.b - ((v / maxY) * (h - pad.t - pad.b));
+          ctx.fillStyle = color;
+          ctx.beginPath();
+          ctx.arc(x, y, dotSize, 0, Math.PI * 2);
+          ctx.fill();
+        });
+      }
+    }
+
+    function drawGridAndLabels(ctx, w, h, pad, labels, maxY, gridLines) {
+      ctx.strokeStyle = C.border;
+      ctx.lineWidth = 0.5;
+      for (let i = 0; i <= gridLines; i++) {
+        const y = h - pad.b - (i / gridLines) * (h - pad.t - pad.b);
+        ctx.beginPath(); ctx.moveTo(pad.l, y); ctx.lineTo(w - pad.r, y); ctx.stroke();
+        ctx.fillStyle = C.text3;
+        ctx.font = '10px Inter, sans-serif';
+        ctx.textAlign = 'right';
+        ctx.fillText(Math.round(maxY * i / gridLines), pad.l - 6, y + 3);
+      }
+      const stepX = (w - pad.l - pad.r) / (labels.length - 1);
+      ctx.textAlign = 'center';
+      ctx.fillStyle = C.text3;
+      ctx.font = '9px Inter, sans-serif';
+      labels.forEach((lbl, i) => {
+        const x = pad.l + i * stepX;
+        ctx.fillText(lbl, x, h - pad.b + 14);
+      });
+    }
+
+    function drawAnnotation(ctx, x, y, text, color) {
+      ctx.fillStyle = color || C.accent;
+      ctx.font = 'bold 9px Inter, sans-serif';
+      ctx.textAlign = 'center';
+      ctx.fillText(text, x, y - 10);
+    }
+
+    // ── Chart 1: v1.8.0 전후 (4~7월) 꺾은선 — MAU만 ──
+    (function() {
+      const { ctx, w, h } = setupCanvas('chart-case1');
+      const pad = { t: 50, r: 30, b: 50, l: 50 };
+      const labels = ['4월', '5월 (Before)', '6월 (v1.8.0)', '7월'];
+      const mau =  [28, 27, 47, 42];
+      const conv = [12.6, 11.1, 16.5, 13.6];
+      const maxY = 55;
+      const chartH = h - pad.t - pad.b;
+      const stepX = (w - pad.l - pad.r) / (labels.length - 1);
+
+      // v1.8.0 하이라이트 배경 (6월)
+      ctx.fillStyle = C.accent + '0c';
+      ctx.fillRect(pad.l + 1.5 * stepX, pad.t, stepX, chartH);
+
+      // 그리드 (수평선만, 3개)
+      ctx.strokeStyle = C.border;
+      ctx.lineWidth = 0.5;
+      for (let i = 1; i <= 3; i++) {
+        const y = h - pad.b - (i / 3) * chartH;
+        ctx.beginPath(); ctx.moveTo(pad.l, y); ctx.lineTo(w - pad.r, y); ctx.stroke();
+      }
+
+      // MAU 영역 채움
+      ctx.fillStyle = C.accent + '15';
+      ctx.beginPath();
+      ctx.moveTo(pad.l, h - pad.b);
+      mau.forEach((v, i) => ctx.lineTo(pad.l + i * stepX, h - pad.b - (v / maxY) * chartH));
+      ctx.lineTo(pad.l + 3 * stepX, h - pad.b);
+      ctx.closePath();
+      ctx.fill();
+
+      // MAU 선
+      ctx.strokeStyle = C.accent;
+      ctx.lineWidth = 2.5;
+      ctx.lineJoin = 'round';
+      ctx.beginPath();
+      mau.forEach((v, i) => {
+        const x = pad.l + i * stepX;
+        const y = h - pad.b - (v / maxY) * chartH;
+        i === 0 ? ctx.moveTo(x, y) : ctx.lineTo(x, y);
+      });
+      ctx.stroke();
+
+      // MAU 점 + 값
+      mau.forEach((v, i) => {
+        const x = pad.l + i * stepX;
+        const y = h - pad.b - (v / maxY) * chartH;
+        // 점
+        ctx.fillStyle = i === 2 ? C.accent : '#fff';
+        ctx.strokeStyle = C.accent;
+        ctx.lineWidth = 2;
+        ctx.beginPath(); ctx.arc(x, y, 5, 0, Math.PI * 2); ctx.fill(); ctx.stroke();
+        // 값
+        ctx.fillStyle = '#f0f0f4';
+        ctx.font = 'bold 13px Inter, sans-serif';
+        ctx.textAlign = 'center';
+        ctx.fillText(v, x, y - 16);
+      });
+
+      // 전환율 값 (X축 아래 서브 라벨)
+      ctx.font = '11px Inter, sans-serif';
+      conv.forEach((v, i) => {
+        const x = pad.l + i * stepX;
+        ctx.fillStyle = i === 2 ? C.personal : C.text3;
+        ctx.textAlign = 'center';
+        ctx.fillText(v + '%', x, h - pad.b + 30);
+      });
+
+      // X축 라벨
+      ctx.font = '10px "Noto Sans KR", sans-serif';
+      labels.forEach((lbl, i) => {
+        const x = pad.l + i * stepX;
+        ctx.fillStyle = i === 2 ? '#f0f0f4' : C.text3;
+        ctx.textAlign = 'center';
+        ctx.fillText(lbl, x, h - pad.b + 16);
+      });
+
+      // Legend (상단)
+      ctx.font = '10px Inter, sans-serif';
+      ctx.textAlign = 'left';
+      ctx.fillStyle = C.accent;
+      ctx.fillText('● MAU', pad.l, 20);
+      ctx.fillStyle = C.personal;
+      ctx.fillText('● 전환율', pad.l + 55, 20);
+
+      // +74% 어노테이션 (5월→6월 사이)
+      const x5 = pad.l + 1 * stepX;
+      const x6 = pad.l + 2 * stepX;
+      const y5 = h - pad.b - (27 / maxY) * chartH;
+      const y6 = h - pad.b - (47 / maxY) * chartH;
+      const midX = (x5 + x6) / 2;
+      const midY = (y5 + y6) / 2;
+      ctx.fillStyle = '#4ade80';
+      ctx.font = 'bold 12px Inter, sans-serif';
+      ctx.textAlign = 'center';
+      ctx.fillText('+74%', midX + 20, midY - 4);
+    })();
+
+    // ── Chart 2: 전체 기간 MAU + WAU (Case 2) ──
+    (function() {
+      const { ctx, w, h } = setupCanvas('chart-case2');
+      const pad = { t: 30, r: 20, b: 30, l: 40 };
+      const labels = [
+        '23.02','','','23.05','','','23.08','','','23.11','','',
+        '24.02','','','24.05','','','24.08','','','24.11','','',
+        '25.02','','','25.05','','','25.08','','','25.11'
+      ];
+      const mau = [21,30,28,27,47,42,45,82,67,38,25,31,32,43,62,61,75,50,67,92,92,81,49,55,34,77,83,98,136,131,161,166,174,156];
+      const wau = [8.8,10.4,8.4,9.6,15.8,13.4,12.6,24.2,23,13.2,9.2,10.6,10,16.6,25,28.2,27.4,21.2,23.4,31.2,37.6,29.6,22,21.6,17.8,33.2,39,40.8,54.2,60.2,64.6,72,69.6,63];
+      const maxY = 185;
+
+      // Simplified labels - show every 3rd
+      const showLabels = labels.map((l, i) => l || '');
+      drawGridAndLabels(ctx, w, h, pad, showLabels, maxY, 4);
+
+      drawLine(ctx, mau, w, h, pad, maxY, C.accent, 0);
+      drawLine(ctx, wau, w, h, pad, maxY, C.green, 0);
+
+      // Fill under MAU
+      const stepX = (w - pad.l - pad.r) / (mau.length - 1);
+      ctx.fillStyle = C.accent + '15';
+      ctx.beginPath();
+      ctx.moveTo(pad.l, h - pad.b);
+      mau.forEach((v, i) => {
+        ctx.lineTo(pad.l + i * stepX, h - pad.b - ((v / maxY) * (h - pad.t - pad.b)));
+      });
+      ctx.lineTo(pad.l + (mau.length - 1) * stepX, h - pad.b);
+      ctx.closePath();
+      ctx.fill();
+
+      // ── 구간 어노테이션 (투명 필드) ──
+      const stepXa = (w - pad.l - pad.r) / (mau.length - 1);
+
+      // 2024 튜토리얼·함께달리기 실패 (index 15~20: 24.05 ~ 24.10)
+      const z1x = pad.l + 15 * stepXa;
+      const z1w = 5 * stepXa;
+      ctx.fillStyle = '#ff6b6b10';
+      ctx.fillRect(z1x, pad.t, z1w, h - pad.t - pad.b);
+      ctx.fillStyle = '#ff6b6b';
+      ctx.font = '9px "Noto Sans KR", sans-serif';
+      ctx.textAlign = 'center';
+      ctx.fillText('튜토리얼·함께달리기', z1x + z1w / 2, pad.t + 14);
+
+      // 2025 러닝카드·대시보드·웰컴카드 (index 24~27: 25.02 ~ 25.05)
+      const z2x = pad.l + 24 * stepXa;
+      const z2w = 3 * stepXa;
+      ctx.fillStyle = C.green + '12';
+      ctx.fillRect(z2x, pad.t, z2w, h - pad.t - pad.b);
+      ctx.fillStyle = C.green;
+      ctx.font = '9px "Noto Sans KR", sans-serif';
+      ctx.fillText('카드·대시보드·웰컴카드', z2x + z2w / 2, pad.t + 14);
+
+      // 2025 AI 코칭 성장기 (index 28~32: 25.06 ~ 25.10)
+      const z3x = pad.l + 28 * stepXa;
+      const z3w = 5 * stepXa;
+      ctx.fillStyle = C.accent + '10';
+      ctx.fillRect(z3x, pad.t, z3w, h - pad.t - pad.b);
+      ctx.fillStyle = C.accent;
+      ctx.font = '9px "Noto Sans KR", sans-serif';
+      ctx.fillText('AI 코칭 성장기', z3x + z3w / 2, pad.t + 14);
+
+      // Legend
+      ctx.font = '10px Inter, sans-serif';
+      ctx.textAlign = 'left';
+      ctx.fillStyle = C.accent;
+      ctx.fillText('● MAU', w - 140, 16);
+      ctx.fillStyle = C.green;
+      ctx.fillText('● WAU', w - 80, 16);
+    })();
+
+    // ── Chart 3: 연도별 Bar Chart (Case 3) ──
+    (function() {
+      const { ctx, w, h } = setupCanvas('chart-case3');
+      const pad = { t: 30, r: 20, b: 40, l: 40 };
+      const categories = ['가입자 합계', '평균 MAU', '평균 WAU'];
+      const data2023 = [354, 41, 14];
+      const data2024 = [663, 61, 23];
+      const data2025 = [1027, 116, 49];
+      const maxVals = [1200, 130, 60];
+
+      const groupW = (w - pad.l - pad.r) / 3;
+      const barW = 24;
+      const gap = 8;
+
+      categories.forEach((cat, gi) => {
+        const gx = pad.l + gi * groupW + groupW / 2;
+        const vals = [data2023[gi], data2024[gi], data2025[gi]];
+        const colors = [C.text3, C.personal, C.accent];
+        const maxV = maxVals[gi];
+
+        vals.forEach((v, bi) => {
+          const x = gx + (bi - 1) * (barW + gap) - barW / 2;
+          const barH = (v / maxV) * (h - pad.t - pad.b);
+          const y = h - pad.b - barH;
+
+          ctx.fillStyle = colors[bi];
+          ctx.beginPath();
+          // Rounded top
+          const r = 4;
+          ctx.moveTo(x, h - pad.b);
+          ctx.lineTo(x, y + r);
+          ctx.quadraticCurveTo(x, y, x + r, y);
+          ctx.lineTo(x + barW - r, y);
+          ctx.quadraticCurveTo(x + barW, y, x + barW, y + r);
+          ctx.lineTo(x + barW, h - pad.b);
+          ctx.closePath();
+          ctx.fill();
+
+          // Value label
+          ctx.fillStyle = colors[bi];
+          ctx.font = 'bold 10px Inter, sans-serif';
+          ctx.textAlign = 'center';
+          ctx.fillText(v.toLocaleString(), x + barW / 2, y - 6);
+        });
+
+        // Category label
+        ctx.fillStyle = C.text2;
+        ctx.font = '11px "Noto Sans KR", sans-serif';
+        ctx.textAlign = 'center';
+        ctx.fillText(cat, gx, h - pad.b + 18);
+      });
+
+      // Legend
+      const legendX = w - 180;
+      [['2023', C.text3], ['2024', C.personal], ['2025', C.accent]].forEach(([label, color], i) => {
+        const x = legendX + i * 60;
+        ctx.fillStyle = color;
+        ctx.fillRect(x, 10, 10, 10);
+        ctx.fillStyle = C.text2;
+        ctx.font = '10px Inter, sans-serif';
+        ctx.textAlign = 'left';
+        ctx.fillText(label, x + 14, 19);
+      });
+    })();
+  </script>
+</body>
+</html>
