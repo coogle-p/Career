@@ -700,11 +700,10 @@ a:hover { text-decoration: underline; }
   /* 타임라인 → 단일 컬럼 */
   .timeline-item {
     grid-template-columns: 1fr;
-    padding-bottom: 32px;
-    margin-bottom: 24px;
-    border-bottom: 1px solid var(--border);
+    padding-bottom: 0;
+    margin-bottom: 36px;
   }
-  .timeline-item:last-child { border-bottom: none; margin-bottom: 0; }
+  .timeline-item:last-child { margin-bottom: 0; }
   .timeline-item::before, .timeline-item::after { display: none; }
   .timeline-meta {
     align-items: flex-start;
