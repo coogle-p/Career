@@ -684,6 +684,24 @@
       ctx.font = '9px "Noto Sans KR", sans-serif';
       ctx.fillText('AI 코칭 성장기', z3x + z3w / 2, pad.t + 14);
 
+      // ── 2023 vs 2024 피크 비교 가로선 (MAU ~82~92 동일 수준) ──
+      const chartH2 = h - pad.t - pad.b;
+      // 2023 피크 MAU 82 (index 7: 23.09)
+      const peakY23 = h - pad.b - (82 / maxY) * chartH2;
+      ctx.strokeStyle = '#ff6b6b';
+      ctx.setLineDash([4, 4]);
+      ctx.lineWidth = 1;
+      ctx.beginPath();
+      ctx.moveTo(pad.l + 6 * stepXa, peakY23);
+      ctx.lineTo(pad.l + 20 * stepXa, peakY23);
+      ctx.stroke();
+      ctx.setLineDash([]);
+      // 라벨
+      ctx.fillStyle = '#ff6b6b';
+      ctx.font = '9px Inter, sans-serif';
+      ctx.textAlign = 'left';
+      ctx.fillText('2023 피크 82 ≈ 2024 피크 92 → 정체', pad.l + 20.3 * stepXa, peakY23 + 3);
+
       // Legend
       ctx.font = '10px Inter, sans-serif';
       ctx.textAlign = 'left';
