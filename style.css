@@ -243,9 +243,35 @@ a:hover { text-decoration: underline; }
   transition: background 0.15s, border-color 0.15s;
   font-family: inherit;
 }
-.side-chip:hover, .side-chip[aria-expanded="true"] {
+/* 메이저: 보라 아웃라인 + 보라 글씨 */
+.side-chip.major {
+  background: #a478f010;
+  color: var(--personal);
+  border-color: var(--personal);
+}
+.side-chip.major .chip-arrow {
+  border-top-color: var(--personal);
+}
+.side-chip.major:hover, .side-chip.major[aria-expanded="true"] {
   background: #a478f020;
   border-color: var(--personal);
+}
+
+/* 마이너: 아웃라인만 */
+.side-chip.minor {
+  background: transparent;
+  color: var(--text-3);
+  border-color: var(--border);
+}
+.side-chip.minor .chip-arrow {
+  border-top-color: var(--text-3);
+}
+.side-chip.minor:hover, .side-chip.minor[aria-expanded="true"] {
+  color: var(--personal);
+  border-color: var(--personal);
+}
+.side-chip.minor:hover .chip-arrow, .side-chip.minor[aria-expanded="true"] .chip-arrow {
+  border-top-color: var(--personal);
 }
 
 .chip-arrow {
