@@ -34,11 +34,36 @@
     </div>
   </section>
 
+  <!-- ━━ 케이스 목차 ━━ -->
+  <div class="case-toc">
+    <a href="#case1" class="case-toc-item">
+      <span class="case-toc-num">01</span>
+      <div>
+        <strong>피드 리디자인</strong>
+        <span>MAU +74%, 전환율 11→16.5%</span>
+      </div>
+    </a>
+    <a href="#case2" class="case-toc-item">
+      <span class="case-toc-num">02</span>
+      <div>
+        <strong>온보딩 개편 + 이터레이션</strong>
+        <span>2024 실패 → 2025 MAU 5배 성장</span>
+      </div>
+    </a>
+    <a href="#case3" class="case-toc-item">
+      <span class="case-toc-num">03</span>
+      <div>
+        <strong>AI 음성 코칭</strong>
+        <span>활성화 34.5%, YoY MAU +88%</span>
+      </div>
+    </a>
+  </div>
+
   <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
        Case 1 — 피드 리디자인
   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
 
-  <section class="case-section">
+  <section id="case1" class="case-section">
     <span class="case-section-label">Case 1 · Problem</span>
     <h2>핵심 기능은 있었지만, 얼굴이 뒷받침하지 못했다</h2>
     <p>
@@ -172,7 +197,7 @@
        Case 2 — 2024년 전환율·리텐션 실험
   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
 
-  <section class="case-section">
+  <section id="case2" class="case-section">
     <span class="case-section-label">Case 2 · Problem</span>
     <h2>가입은 느는데, 달리지 않는다</h2>
     <p>
@@ -185,41 +210,29 @@
   <section class="case-section">
     <span class="case-section-label">Case 2 · Experiment</span>
     <h2>두 가지 시도, 두 가지 실패</h2>
-    <div class="case-process">
-      <div class="case-step">
-        <span class="case-step-num">1</span>
-        <div class="case-step-content">
-          <h3>튜토리얼 (v2.3.1, 2024-05)</h3>
-          <p>첫 러닝까지의 허들을 낮추기 위해 온보딩 튜토리얼을 추가. 결과: 전환율 변화 미미(8.7% → 9.8%). 계절적 상승(봄→여름)과 구분되지 않는 수준.</p>
+    <div class="case-side-layout">
+      <div class="case-side-text">
+        <div style="display:flex;gap:12px;margin-bottom:24px;">
+          <span class="case-step-num">1</span>
+          <div>
+            <h3 style="font-size:16px;font-weight:700;color:var(--text-1);margin-bottom:6px;">튜토리얼 (v2.3.1, 2024-05)</h3>
+            <p style="font-size:14px;color:var(--text-2);line-height:1.7;">첫 러닝까지의 허들을 낮추기 위해 온보딩 튜토리얼 추가. 결과: 전환율 변화 미미(8.7% → 9.8%). 계절적 상승과 구분 불가.</p>
+          </div>
+        </div>
+        <div style="display:flex;gap:12px;">
+          <span class="case-step-num">2</span>
+          <div>
+            <h3 style="font-size:16px;font-weight:700;color:var(--text-1);margin-bottom:6px;">함께달리기 (v2.4.1, 2024-09)</h3>
+            <p style="font-size:14px;color:var(--text-2);line-height:1.7;">듀오링고 프렌드 스트릭 벤치마킹 — 주 1회 이상 둘 다 달리면 스트릭 적립. 결과: <strong>MAU 정체(92 → 92)</strong>, 이후 하락. 출시 다음날 긴급 버그 수정. 현재 기능 제거 상태.</p>
+          </div>
         </div>
       </div>
-    </div>
-
-    <div class="case-compare" style="margin-top:16px;">
-      <div class="compare-row">
-        <img src="img/tutorial-1.png" alt="튜토리얼 목록" />
-        <img src="img/tutorial-2.jpg" alt="튜토리얼 세부 구성" />
-      </div>
-      <p class="case-img-caption">튜토리얼 온보딩 화면</p>
-    </div>
-
-    <div class="case-process" style="margin-top:32px;">
-      <div class="case-step">
-        <span class="case-step-num">2</span>
-        <div class="case-step-content">
-          <h3>함께달리기 (v2.4.1, 2024-09)</h3>
-          <p>듀오링고의 프렌드 스트릭을 벤치마킹 — 두 명이 주 1회 이상 각자 달리면 스트릭이 쌓이는 구조.
-            결과: <strong>MAU 완전 정체(92 → 92)</strong>, 이후 하락. 출시 다음날 긴급 버그 수정(v2.4.2), 6개월 후(v2.9.3) 재수정. 현재 기능 제거 상태.</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="case-compare" style="margin-top:16px;">
-      <div class="compare-row">
-        <img src="img/together-1.png" alt="함께달리기 대기 화면" />
+      <div class="case-side-imgs">
+        <img src="img/tutorial-1.png" alt="튜토리얼" />
+        <img src="img/tutorial-2.jpg" alt="튜토리얼 세부" />
+        <img src="img/together-1.png" alt="함께달리기" />
         <img src="img/together-2.png" alt="함께달리기 스트릭" />
       </div>
-      <p class="case-img-caption">함께달리기 UI (현재 제거)</p>
     </div>
 
     <div class="case-img" style="margin-top:24px;">
@@ -356,7 +369,7 @@
        Case 3 — AI 코칭 도입
   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
 
-  <section class="case-section">
+  <section id="case3" class="case-section">
     <span class="case-section-label">Case 3 · Approach</span>
     <h2>AI 음성 코칭 — "달린 후"를 "달리는 중"으로 확장</h2>
     <p>
@@ -437,30 +450,31 @@
     <h2>2년 반의 프로덕트 운영에서 배운 것</h2>
 
     <div class="case-learning">
-      <p class="case-learning-title">디자인은 기능이다</p>
+      <p class="case-learning-title">Case 1에서 — 디자인은 행동을 만든다</p>
       <p>
-        피드 리디자인이 단순 UI 변경이 아니라 MAU +74%, 전환율 +49%라는 숫자로 증명되었습니다.
-        소셜 앱에서 디자인은 장식이 아니라, <strong>행동을 유도하는 기능</strong>입니다.
+        피드 리디자인이 MAU +74%, 전환율 11→16.5%라는 숫자로 증명되었습니다.
+        소셜 앱에서 디자인은 장식이 아니라, <strong>"나도 달려야겠다"는 동기를 만드는 기능</strong>입니다.
+        다른 사람의 러닝 기록을 보는 경험의 질을 높인 것이 실제 러닝 행동으로 이어졌습니다.
       </p>
     </div>
 
     <div class="case-learning">
-      <p class="case-learning-title">팀 스케일링 — 2명에서 5명으로</p>
+      <p class="case-learning-title">Case 2에서 — 실패한 실험이 방향을 알려준다</p>
       <p>
-        "내가 다 하는 게 빠르다"는 관성을 버리는 데 시간이 걸렸습니다.
-        역할 경계를 명확히 나누고, 주간 스프린트 리뷰를 도입한 뒤에야
-        각자의 속도가 팀의 속도가 되는 경험을 했습니다.
-        <strong>PM의 일은 빠르게 만드는 것이 아니라
-        팀이 빠르게 만들 수 있는 환경을 만드는 것</strong>입니다.
+        2024년 한 해 동안 알림·콘텐츠 등 다양한 리텐션 실험을 했지만 유의미한 결과를 내지 못했습니다.
+        그 실패가 <strong>"외부 자극이 아니라 사용자 경험 자체를 바꿔야 한다"</strong>는 방향을 알려줬고,
+        2025년 온보딩 개편(웰컴 카드 + 순위 대시보드)이라는 전환점으로 이어졌습니다.
+        실패 없이는 이 판단을 할 수 없었습니다.
       </p>
     </div>
 
     <div class="case-learning">
-      <p class="case-learning-title">계절성과 싸우지 않기</p>
+      <p class="case-learning-title">Case 3에서 — 점진적 이터레이션의 힘</p>
       <p>
-        매년 12~2월 MAU가 급락하는 패턴을 3년 연속 확인했습니다.
-        처음에는 겨울에도 지표를 올리려 했지만, 결국 <strong>계절성은 바꿀 수 없는 외부 변수</strong>라는 것을 받아들이고
-        봄(3~4월)에 집중적으로 기능을 출시하는 전략으로 전환했습니다.
+        AI 코칭은 하루아침에 만들어지지 않았습니다.
+        1km 페이스 알림(v2.6.0) → AI 피드백(v2.8.0) → 코치 선택(v2.12.0) → 음성 채팅(v2.19.0)까지,
+        <strong>6개월간 10개 이상의 버전을 쌓아올려</strong> 도달한 결과입니다.
+        한 번의 큰 릴리즈가 아니라, 작은 가설을 빠르게 검증하는 사이클이 MAU +88%를 만들었습니다.
       </p>
     </div>
   </section>

@@ -114,6 +114,53 @@ a:hover { text-decoration: underline; }
   color: var(--text-1);
 }
 
+/* ── 케이스 목차 ── */
+.case-toc {
+  max-width: 800px;
+  margin: 0 auto 64px;
+  padding: 0 32px;
+  display: flex;
+  gap: 12px;
+}
+
+.case-toc-item {
+  flex: 1;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 16px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  text-decoration: none;
+  transition: border-color 0.2s, background 0.2s;
+}
+.case-toc-item:hover {
+  border-color: var(--accent);
+  background: rgba(108,140,245,0.05);
+  text-decoration: none;
+}
+
+.case-toc-num {
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--accent);
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.case-toc-item strong {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-1);
+  margin-bottom: 2px;
+}
+
+.case-toc-item span {
+  font-size: 11px;
+  color: var(--text-3);
+}
+
 /* ── 이미지 ── */
 .case-img {
   max-width: 800px;
@@ -121,7 +168,8 @@ a:hover { text-decoration: underline; }
   padding: 0 32px;
 }
 
-.case-img img {
+.case-img img,
+.case-img video {
   width: 100%;
   border-radius: 12px;
   display: block;
@@ -134,9 +182,38 @@ a:hover { text-decoration: underline; }
   border-radius: 12px;
 }
 
+/* ── 캐러셀 (인라인 가로 배치) ── */
+.case-carousel {
+  margin: 24px 0;
+}
+
+.carousel-track {
+  display: flex;
+  gap: 8px;
+}
+
+.carousel-slide {
+  flex: 1;
+  min-width: 0;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  background: var(--bg-card);
+}
+
+.carousel-slide img {
+  width: 100%;
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .carousel-track { overflow-x: auto; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; }
+  .carousel-slide { flex: 0 0 80%; scroll-snap-align: start; }
+}
+
 /* Before / After 비교 */
 .case-compare {
-  max-width: 900px;
+  max-width: 800px;
   margin: 0 auto 64px;
   padding: 0 32px;
 }
@@ -222,6 +299,33 @@ a:hover { text-decoration: underline; }
   max-height: 160px;
 }
 
+/* ── 텍스트 + 이미지 가로 배치 ── */
+.case-side-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  align-items: start;
+  margin-top: 8px;
+}
+.case-side-text {
+  display: flex;
+  flex-direction: column;
+}
+.case-side-imgs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+.case-side-imgs img {
+  width: 100%;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+}
+@media (max-width: 768px) {
+  .case-side-layout { grid-template-columns: 1fr; gap: 20px; }
+  .case-side-imgs { grid-template-columns: repeat(4, 1fr); }
+}
+
 .compare-label.before {
   background: rgba(255,255,255,0.15);
   color: var(--text-2);
@@ -246,19 +350,27 @@ a:hover { text-decoration: underline; }
 .compare-row {
   display: flex;
   justify-content: center;
-  gap: 10px;
-  margin-bottom: 24px;
+  gap: 8px;
+  margin-bottom: 16px;
   overflow-x: auto;
   padding-bottom: 4px;
   -webkit-overflow-scrolling: touch;
 }
 
 .compare-row img {
-  height: 280px;
+  height: 180px;
   width: auto;
-  border-radius: 10px;
+  border-radius: 8px;
   border: 1px solid var(--border);
   flex-shrink: 0;
+}
+
+/* UI 비교 전체 감싸기 */
+.compare-screens-wrap {
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 20px 16px 12px;
 }
 
 .case-img-placeholder {
@@ -501,6 +613,7 @@ a:hover { text-decoration: underline; }
   .case-results { grid-template-columns: 1fr 1fr; }
   .case-nav { padding: 12px 16px; }
   .case-footer-nav { padding: 24px 20px 48px; flex-direction: column; }
+  .case-toc { flex-direction: column; padding: 0 20px; }
   .case-compare { padding: 0 16px; }
   .compare-grid { grid-template-columns: 1fr; }
   .compare-row img { height: 200px; }
