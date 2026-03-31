@@ -1,0 +1,266 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SecondThoughts — Case Study</title>
+  <link href="case.css" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <nav class="case-nav">
+    <a href="/" class="case-nav-back">← 이력서로 돌아가기</a>
+    <span class="case-nav-title">Case Study</span>
+  </nav>
+
+  <!-- 히어로 -->
+  <section class="case-hero">
+    <span class="case-hero-badge">SecondThoughts</span>
+    <h1>AI 코딩으로 처음 빌딩한<br />유료 심리 분석 서비스</h1>
+    <p class="case-hero-desc">
+      "사람들이 AI로 가장 많이 하는 건 연애 상담이다"라는 데이터에서 출발해,
+      Claude Code로 아이디어부터 유료 서비스까지 단독으로 빌딩한 첫 번째 실험.
+      현재 전환 퍼널을 설계하고 가설을 검증하는 단계에 있습니다.
+    </p>
+    <div class="case-meta">
+      <div class="case-meta-item"><span class="case-meta-label">기간</span><span class="case-meta-value">2025.11 — 현재</span></div>
+      <div class="case-meta-item"><span class="case-meta-label">역할</span><span class="case-meta-value">1인 기획 · 개발 · 운영</span></div>
+      <div class="case-meta-item"><span class="case-meta-label">스택</span><span class="case-meta-value">Claude Code · OpenAI API · Polar · Supabase</span></div>
+    </div>
+  </section>
+
+  <div class="case-img" style="position:relative;">
+    <a href="https://secondthoughts.space/" target="_blank" rel="noopener" class="case-img-visit">페이지 바로가기 ↗</a>
+    <img src="img/secondthoughts-landing.png" alt="SecondThoughts 메인 랜딩 페이지" />
+    <p class="case-img-caption">SecondThoughts 메인 랜딩 페이지</p>
+  </div>
+
+  <!-- 가설 -->
+  <section class="case-section">
+    <span class="case-section-label">Hypothesis</span>
+    <h2>"AI 상담"을 더 가치 있는 형태로 바꿀 수 있을까?</h2>
+    <p>
+      Harvard Business Review의
+      <a href="https://hbr.org/2025/04/how-people-are-really-using-gen-ai-in-2025" target="_blank" rel="noopener">"How People Are Really Using Gen AI in 2025"</a>
+      기사에 따르면, 생성형 AI의 사용 목적 1위는 <strong>심리 상담과 정서적 대화(Therapy &amp; Companionship)</strong>로,
+      전체 사용의 약 31%를 차지합니다.
+    </p>
+    <div class="case-highlight">
+      <p>
+        <strong>출발점:</strong> 사람들은 이미 ChatGPT에 연애 고민을 쏟아내고 있지만,
+        일회성 대화는 금방 잊힙니다.
+        이 수요를 <strong>전문 자료 기반의 체계적인 관계 패턴 분석 리포트</strong>로 전환하면
+        지속적이고 더 깊은 가치를 제공할 수 있다는 가설에서 시작했습니다.
+      </p>
+    </div>
+  </section>
+
+  <!-- 빌딩 -->
+  <section class="case-section">
+    <span class="case-section-label">Building</span>
+    <h2>Claude Code로 처음 빌딩한 유료 서비스</h2>
+    <p>
+      OpenAI API를 연동해 심리학 전문 자료를 기반으로 관계 패턴을 분석하는 리포트를 설계했습니다.
+      단순한 챗봇 대화가 아니라, 사용자의 입력을 구조화된 프롬프트로 변환해
+      <strong>최대한 전문적이고 가치 있는 결과</strong>를 생성하는 데 집중했습니다.
+    </p>
+    <p>
+      이 결과물을 유료 서비스로 만들되, 처음부터 결제를 요구하면 진입 장벽이 높아질 것을 우려했습니다.
+      동시에 API 호출 비용을 최소화해야 했기 때문에, 두 가지 문제를 한 번에 해결하는 구조를 설계했습니다.
+    </p>
+    <div class="case-process">
+      <div class="case-step">
+        <span class="case-step-num">1</span>
+        <div class="case-step-content">
+          <h3>미리보기로 가치 확인</h3>
+          <p>사용자가 입력을 완료하면 리포트의 핵심 요약(미리보기)을 무료로 보여줍니다.
+          "이 정도 분석이라면 돈을 낼 만하겠다"는 확신을 결제 전에 제공해 진입 장벽을 낮췄습니다.</p>
+        </div>
+      </div>
+      <div class="case-step">
+        <span class="case-step-num">2</span>
+        <div class="case-step-content">
+          <h3>결제 후 전문 리포트 제공</h3>
+          <p>Polar 결제를 완료하면 전체 리포트를 열람할 수 있는 구조입니다.
+          미리보기 단계에서 이미 가치를 체감했기 때문에, 결제 전환의 심리적 허들을 줄일 수 있다는 가설입니다.</p>
+        </div>
+      </div>
+      <div class="case-step">
+        <span class="case-step-num">3</span>
+        <div class="case-step-content">
+          <h3>API 비용 최적화</h3>
+          <p>미리보기에는 경량 프롬프트를, 전문 리포트에는 전문 자료 기반 프롬프트를 분리 적용해
+          결제 전환이 일어나지 않는 사용자에 대한 API 비용을 최소화했습니다.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="case-img" style="text-align:center;">
+      <img src="img/secondthoughts-checkout.png" alt="결제 직전 미리보기 화면 — 분석 결과 요약과 Unlock 버튼" style="max-height:560px; width:auto; margin:0 auto;" />
+      <p class="case-img-caption">결제 직전 미리보기 화면 — 분석 요약을 먼저 보여준 뒤 전체 리포트 잠금 해제를 유도</p>
+    </div>
+  </section>
+
+  <!-- 기술 구현 -->
+  <section class="case-section">
+    <span class="case-section-label">Implementation</span>
+    <h2>풀스택 구현과 퍼널 설계</h2>
+    <p>
+      Claude Code를 활용해 아이디어부터 배포까지 전 과정을 단독으로 구현했습니다.
+      OpenAI API로 리포트를 생성하고, Supabase에 사용자 데이터와 결제 상태를 저장하며,
+      Polar로 결제를 처리하고, Resend로 리포트 이메일을 발송하는 전체 파이프라인을 구축했습니다.
+    </p>
+    <p>
+      GA4와 Microsoft Clarity를 연동해 전환 퍼널(랜딩 → 입력 완료 → 미리보기 → 결제 → 리포트 열람)을 설계하고,
+      각 단계별 이탈률을 추적할 수 있는 데이터 기반을 마련했습니다.
+    </p>
+
+    <h3 style="font-size:18px; font-weight:700; color:var(--text-1); margin:40px 0 12px;">GA4 이벤트 태깅 설계</h3>
+    <p>
+      페이지뷰가 아닌 <strong>퍼널 단계별 이탈 지점</strong>을 파악하기 위해
+      화면 진입·행동·결제·리포트 소비까지 커스텀 이벤트 30여 개를 직접 설계하고 코드에 심었습니다.
+    </p>
+
+    <!-- 퍼널 핵심 전환 -->
+    <p style="font-size:12px; font-weight:600; color:var(--accent); letter-spacing:0.06em; margin:24px 0 8px;">핵심 퍼널 이벤트</p>
+    <table class="case-table">
+      <thead><tr><th style="text-align:left;">이벤트</th><th style="text-align:left;">발생 시점</th></tr></thead>
+      <tbody>
+        <tr><td><code>begin_assessment</code></td><td style="text-align:left;">시작 버튼 클릭</td></tr>
+        <tr><td><code>assessment_complete</code></td><td style="text-align:left;">질문 입력 완료</td></tr>
+        <tr><td><code>preview_unlock_click</code></td><td style="text-align:left;">미리보기 → 결제 버튼 클릭</td></tr>
+        <tr><td><code>purchase</code></td><td style="text-align:left;">결제 완료</td></tr>
+        <tr><td><code>checkout_abandon</code></td><td style="text-align:left;">결제 페이지 이탈</td></tr>
+      </tbody>
+    </table>
+
+    <details style="margin-top:16px;">
+      <summary style="font-size:13px; font-weight:600; color:var(--text-2); cursor:pointer; padding:8px 0;">전체 이벤트 목록 보기 (30개)</summary>
+      <div style="margin-top:12px;">
+        <p style="font-size:12px; font-weight:600; color:var(--accent); letter-spacing:0.06em; margin:16px 0 8px;">SCREEN VIEW</p>
+        <table class="case-table">
+          <thead><tr><th style="text-align:left;">이벤트</th><th style="text-align:left;">설명</th></tr></thead>
+          <tbody>
+            <tr><td><code>view_landing</code></td><td style="text-align:left;">랜딩 페이지 진입</td></tr>
+            <tr><td><code>view_preview</code></td><td style="text-align:left;">미리보기 화면 진입</td></tr>
+            <tr><td><code>view_payment</code></td><td style="text-align:left;">결제 화면 진입</td></tr>
+            <tr><td><code>view_result</code></td><td style="text-align:left;">결과 화면 진입</td></tr>
+            <tr><td><code>view_login</code> / <code>view_mypage</code> / <code>view_history</code></td><td style="text-align:left;">기타 화면 진입</td></tr>
+          </tbody>
+        </table>
+
+        <p style="font-size:12px; font-weight:600; color:var(--accent); letter-spacing:0.06em; margin:24px 0 8px;">RESULT PAGE</p>
+        <table class="case-table">
+          <thead><tr><th style="text-align:left;">이벤트</th><th style="text-align:left;">발생 시점</th></tr></thead>
+          <tbody>
+            <tr><td><code>report_generated</code></td><td style="text-align:left;">리포트 생성 완료</td></tr>
+            <tr><td><code>scroll_report_50</code> / <code>scroll_report_100</code></td><td style="text-align:left;">리포트 스크롤 깊이</td></tr>
+            <tr><td><code>report_save_image</code> / <code>report_share</code> / <code>report_send_email</code></td><td style="text-align:left;">리포트 공유·저장</td></tr>
+          </tbody>
+        </table>
+
+        <p style="font-size:12px; font-weight:600; color:var(--accent); letter-spacing:0.06em; margin:24px 0 8px;">AUTH &amp; UX</p>
+        <table class="case-table">
+          <thead><tr><th style="text-align:left;">이벤트</th><th style="text-align:left;">발생 시점</th></tr></thead>
+          <tbody>
+            <tr><td><code>sign_up</code> / <code>login</code></td><td style="text-align:left;">회원가입·로그인</td></tr>
+            <tr><td><code>exit_popup_shown</code> / <code>clicked</code> / <code>dismissed</code></td><td style="text-align:left;">Exit intent 팝업 퍼널</td></tr>
+            <tr><td><code>funnel_back</code></td><td style="text-align:left;">질문 단계 뒤로 가기 (from → to)</td></tr>
+            <tr><td><code>mini_demo_select</code> / <code>image_upload</code></td><td style="text-align:left;">UX 인터랙션</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </details>
+  </section>
+
+  <!-- 현재 단계 -->
+  <section class="case-section">
+    <span class="case-section-label">Current Status</span>
+    <h2>퍼널 완성, 이제 가설 검증 단계</h2>
+    <div class="case-results">
+      <div class="case-result-card">
+        <div class="case-result-num">Full-stack</div>
+        <div class="case-result-label">기획 · API · DB · 결제 · 배포 단독 수행</div>
+      </div>
+      <div class="case-result-card">
+        <div class="case-result-num">6개</div>
+        <div class="case-result-label">외부 서비스 연동</div>
+      </div>
+      <div class="case-result-card">
+        <div class="case-result-num">Next</div>
+        <div class="case-result-label">소셜 플랫폼 노출 후 지표 검증</div>
+      </div>
+    </div>
+    <p>
+      서비스 빌딩과 전환 퍼널 설계까지 완료된 상태이며,
+      다음 단계로 소셜 플랫폼(인스타그램, 틱톡 등)을 통해 트래픽을 유입시키고
+      실제 전환율 데이터를 수집해 가설을 검증할 예정입니다.
+    </p>
+  </section>
+
+  <!-- 러닝 -->
+  <section class="case-section">
+    <span class="case-section-label">Learning</span>
+    <h2>첫 빌딩 실험에서 배운 것</h2>
+    <div class="case-learning">
+      <p class="case-learning-title">진입 장벽과 비용의 동시 해결</p>
+      <p>
+        유료 서비스의 가장 큰 허들은 "돈을 내기 전에 가치를 알 수 없다"는 점이었습니다.
+        미리보기 구조는 사용자에게 가치를 먼저 보여주는 동시에,
+        <strong>전환이 일어나지 않는 경우의 API 비용을 줄이는</strong> 일석이조의 해결책이었습니다.
+      </p>
+    </div>
+    <div class="case-learning">
+      <p class="case-learning-title">AI 코딩으로 실험 속도 높이기</p>
+      <p>
+        Claude Code로 처음 제품을 빌딩하면서,
+        기획자가 직접 코드를 다룰 수 있을 때 <strong>아이디어와 실행 사이의 거리가 극적으로 줄어든다</strong>는 것을 체감했습니다.
+        가설을 세우고, 빠르게 만들고, 데이터로 검증하는 사이클을 혼자서도 돌릴 수 있다는 가능성을 확인한 실험입니다.
+      </p>
+    </div>
+  </section>
+
+  <!-- 다음 단계 -->
+  <section class="case-section">
+    <span class="case-section-label">Next Steps</span>
+    <h2>지금부터 할 것 — 노출 확대와 가설 검증</h2>
+    <p>
+      서비스와 전환 퍼널이 갖춰진 상태에서, 이제 실제 트래픽을 유입시켜
+      <strong>"미리보기가 결제 전환을 만드는가"</strong>라는 핵심 가설을 데이터로 검증하는 단계입니다.
+    </p>
+    <div class="case-process">
+      <div class="case-step">
+        <span class="case-step-num">1</span>
+        <div class="case-step-content">
+          <h3>소셜 플랫폼 콘텐츠 노출</h3>
+          <p>인스타그램 릴스·틱톡·레딧 등에 연애 패턴 관련 숏폼 콘텐츠를 게시해 랜딩 페이지로 트래픽을 유입시킵니다.</p>
+        </div>
+      </div>
+      <div class="case-step">
+        <span class="case-step-num">2</span>
+        <div class="case-step-content">
+          <h3>퍼널 전환율 측정</h3>
+          <p>GA4에 설계한 이벤트로 랜딩 → 입력 완료 → 미리보기 → 결제 각 단계의 전환율과 이탈 지점을 추적합니다.</p>
+        </div>
+      </div>
+      <div class="case-step">
+        <span class="case-step-num">3</span>
+        <div class="case-step-content">
+          <h3>데이터 기반 이터레이션</h3>
+          <p>이탈이 집중되는 구간을 식별하고, 카피·CTA·미리보기 노출 범위 등을 조정하며 전환율을 개선해 나갑니다.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 하단 네비 -->
+  <nav class="case-footer-nav">
+    <a href="/" class="case-footer-link">← 이력서로 돌아가기</a>
+    <a href="/case/pacemaker.html" class="case-footer-link">다음 케이스 → <strong>Pacemaker</strong></a>
+  </nav>
+
+</body>
+</html>

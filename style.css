@@ -376,8 +376,8 @@ a:hover { text-decoration: underline; }
 .project-card:hover { border-color: var(--accent); transform: translateY(-2px); }
 
 .project-header {
-  display: flex; justify-content: space-between; align-items: flex-start;
-  margin-bottom: 10px; gap: 12px;
+  display: flex; flex-direction: column; align-items: center; text-align: center;
+  margin-bottom: 10px; gap: 4px;
 }
 
 .project-company-tag {
@@ -464,13 +464,34 @@ a:hover { text-decoration: underline; }
   text-decoration: none;
 }
 
-.link-chip.case-link {
+/* 케이스 스터디 CTA — 카드 하단 전용 */
+.case-cta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 16px;
+  padding: 12px 16px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--bg);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-2);
+  text-decoration: none;
+  transition: border-color 0.2s, color 0.2s, background 0.2s;
+}
+.case-cta:hover {
   border-color: var(--accent);
   color: var(--accent);
-  font-weight: 600;
-}
-.link-chip.case-link:hover {
   background: var(--accent-dim);
+  text-decoration: none;
+}
+.case-cta-arrow {
+  font-size: 16px;
+  transition: transform 0.2s;
+}
+.case-cta:hover .case-cta-arrow {
+  transform: translateX(4px);
 }
 .metric-sub-links {
   display: flex;
@@ -645,6 +666,213 @@ a:hover { text-decoration: underline; }
   flex-shrink: 0;
 }
 
+/* ── Easter Egg ── */
+.easter-egg { margin-bottom: 32px; }
+
+.easter-trigger {
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-3);
+  padding: 14px 24px;
+  border-radius: 24px;
+  border: 1px dashed var(--border);
+  background: linear-gradient(135deg, rgba(108,140,245,0.04), rgba(164,120,240,0.04));
+  display: inline-block;
+  text-align: center;
+  list-style: none;
+  letter-spacing: 0.02em;
+  margin: 0 auto;
+  width: auto;
+}
+.easter-egg { margin-bottom: 32px; text-align: center; }
+.easter-egg:not([open]) .easter-trigger {
+  animation: eggNudge 2.5s ease-in-out infinite;
+}
+.easter-egg.in-view:not([open]) .easter-trigger {
+  animation: eggAppear 0.6s ease forwards, eggNudge 2.5s ease-in-out 0.6s infinite;
+}
+@keyframes eggAppear {
+  0% { opacity: 0.4; transform: scale(0.9); box-shadow: 0 0 0 rgba(108,140,245,0); }
+  50% { box-shadow: 0 0 30px rgba(108,140,245,0.3); }
+  100% { opacity: 1; transform: scale(1); box-shadow: 0 0 0 rgba(108,140,245,0); }
+}
+@keyframes eggNudge {
+  0%, 70%, 100% { transform: translateY(0) rotate(0deg); }
+  75% { transform: translateY(-6px) rotate(-2deg); }
+  80% { transform: translateY(0) rotate(0deg); }
+  85% { transform: translateY(-4px) rotate(1deg); }
+  90% { transform: translateY(0) rotate(0deg); }
+}
+.easter-trigger::-webkit-details-marker { display: none; }
+.easter-trigger::marker { content: ''; }
+.easter-trigger:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+  background: linear-gradient(135deg, rgba(108,140,245,0.1), rgba(164,120,240,0.1));
+  animation: none !important;
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(108,140,245,0.15);
+  transition: color 0.3s, border-color 0.3s, background 0.3s, box-shadow 0.3s, transform 0.3s;
+}
+.easter-egg[open] .easter-trigger {
+  border-style: solid;
+  border-color: var(--accent);
+  color: var(--accent);
+  background: linear-gradient(135deg, rgba(108,140,245,0.08), rgba(164,120,240,0.08));
+}
+
+.easter-content {
+  margin-top: 16px;
+  animation: easterReveal 0.4s ease;
+}
+
+@keyframes easterReveal {
+  from { opacity: 0; transform: translateY(-8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.terminal {
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+}
+
+.terminal-bar {
+  background: #1a1a1e;
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.terminal-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.terminal-title {
+  font-size: 11px;
+  color: var(--text-3);
+  margin-left: 8px;
+  font-family: 'SF Mono', 'Fira Code', 'Menlo', monospace;
+}
+
+.terminal-body {
+  background: #0c0c0f;
+  padding: 24px 20px;
+  font-family: 'SF Mono', 'Fira Code', 'Menlo', 'Cascadia Code', monospace;
+  font-size: 13px;
+  line-height: 1.8;
+  color: var(--text-2);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.t-cmd { color: var(--text-2); }
+.t-prompt { color: var(--accent); font-weight: 600; margin-right: 6px; }
+
+.t-output {
+  margin: 12px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.t-key { color: var(--personal); font-weight: 600; }
+.t-line { padding-left: 16px; }
+
+.t-result {
+  color: var(--accent);
+  font-weight: 700;
+  font-size: 14px;
+  margin-top: 4px;
+}
+
+.t-cursor::after {
+  content: '█';
+  animation: cursorBlink 1s step-end infinite;
+  margin-left: 4px;
+  font-size: 12px;
+}
+
+@keyframes cursorBlink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* ── Terminal Game ── */
+.game-q { font-size: 14px; color: var(--text-1); font-weight: 600; margin-top: 16px; }
+.game-qn { color: var(--accent); }
+.game-step { margin-top: 4px; }
+
+.game-opts { display: flex; gap: 8px; margin-top: 12px; flex-wrap: wrap; align-items: center; }
+.game-end { margin-top: 24px; }
+
+.game-btn {
+  font-family: 'SF Mono', 'Fira Code', 'Menlo', monospace;
+  font-size: 13px;
+  padding: 9px 20px;
+  border-radius: 6px;
+  border: 1px solid var(--accent);
+  background: transparent;
+  color: var(--accent);
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s, transform 0.15s;
+}
+.game-btn:hover { background: var(--accent); color: #fff; transform: translateY(-1px); }
+.game-btn-back { border-color: var(--border); color: var(--text-3); font-size: 12px; padding: 8px 14px; }
+.game-btn-back:hover { border-color: var(--text-2); color: var(--text-2); background: transparent; transform: none; }
+.game-btn-re { border-color: var(--personal); color: var(--personal); }
+.game-btn-re:hover { background: var(--personal); color: #fff; }
+
+.game-dim { color: var(--text-3); font-size: 12px; margin-top: 8px; }
+.game-ok { color: #28c840; }
+.game-trait { padding-left: 4px; margin-top: 3px; }
+.game-punch { color: var(--text-1); font-weight: 600; margin-top: 16px; font-size: 14px; }
+.game-match { font-size: 18px; font-weight: 800; color: var(--accent); letter-spacing: 0.06em; margin-top: 10px; }
+
+.game-bar {
+  margin-top: 14px;
+  height: 6px;
+  background: var(--bg);
+  border-radius: 3px;
+  position: relative;
+}
+.game-fill {
+  height: 100%;
+  width: 0;
+  background: linear-gradient(90deg, var(--accent), var(--personal));
+  border-radius: 3px;
+  transition: width 0.4s ease;
+}
+.game-bar-final .game-fill { transition: none; }
+.game-pct {
+  position: absolute;
+  right: 0; top: -22px;
+  font-size: 12px;
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.game-result { margin-top: 24px; }
+.game-name {
+  display: block;
+  font-size: 28px;
+  font-weight: 800;
+  color: var(--text-1);
+  letter-spacing: -0.02em;
+}
+.game-to {
+  display: block;
+  font-size: 15px;
+  color: var(--accent);
+  font-weight: 600;
+  margin-top: 6px;
+}
+
 /* ── 맨 위로 버튼 ── */
 .scroll-top {
   display: none;
@@ -749,6 +977,15 @@ a:hover { text-decoration: underline; }
   .secondary-item { padding: 14px 14px; }
   .secondary-bottom { flex-direction: column; align-items: flex-start; gap: 8px; }
   .secondary-links { flex-wrap: wrap; }
+
+  /* Easter Egg */
+  .terminal-body { padding: 16px 14px; font-size: 11px; }
+  .t-line { padding-left: 12px; }
+  .t-result { font-size: 12px; }
+
+  /* Terminal Game */
+  .game-btn { font-size: 12px; padding: 8px 14px; }
+  .game-name { font-size: 22px; }
 
   /* 인라인 확장 패널 */
   .side-expand.open .se-inner { padding: 10px 12px; }

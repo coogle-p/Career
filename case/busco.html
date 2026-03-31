@@ -1,0 +1,319 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Busco — Case Study</title>
+  <link href="case.css" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <nav class="case-nav">
+    <a href="/" class="case-nav-back">← 이력서로 돌아가기</a>
+    <span class="case-nav-title">Case Study</span>
+  </nav>
+
+  <!-- 히어로 -->
+  <section class="case-hero">
+    <span class="case-hero-badge">CLAB · Busco</span>
+    <h1>문제 정의부터 기술 이관까지,<br />0→1 피트니스 프로덕트</h1>
+    <p class="case-hero-desc">
+      "웨어러블로 실제 운동 동작을 추적할 수 없을까?" 라는 질문에서 시작해,
+      갤럭시 버즈 센서 데이터를 활용한 웨이트 트래킹 서비스를 기획하고
+      3개 사업부에 기술 이관하기까지의 이야기입니다.
+    </p>
+    <div class="case-meta">
+      <div class="case-meta-item"><span class="case-meta-label">기간</span><span class="case-meta-value">2022.02 — 2023.01</span></div>
+      <div class="case-meta-item"><span class="case-meta-label">역할</span><span class="case-meta-value">PM/UX · Team Lead</span></div>
+      <div class="case-meta-item"><span class="case-meta-label">팀</span><span class="case-meta-value">5명 (PM/UX, DA 1, Dev 3)</span></div>
+      <div class="case-meta-item"><span class="case-meta-label">소속</span><span class="case-meta-value">사내 벤처 CLAB</span></div>
+    </div>
+  </section>
+
+  <!-- 사이드 인디케이터 -->
+  <nav class="case-side-nav" id="sideNav">
+    <a href="#story1" data-case="story1"><span class="side-dot"></span><span class="side-label">01 문제 정의</span></a>
+    <a href="#story2" data-case="story2"><span class="side-dot"></span><span class="side-label">02 정확도 돌파</span></a>
+    <a href="#execution" data-case="execution"><span class="side-dot"></span><span class="side-label">실행 & 성과</span></a>
+    <a href="#learning" data-case="learning"><span class="side-dot"></span><span class="side-label">Learning</span></a>
+  </nav>
+
+  <!-- Story 01: 문제 정의 -->
+  <section id="story1" class="case-section">
+    <span class="case-section-label">Story 01 — Problem</span>
+    <h2>이어폰이야말로 가장 최적의 웨어러블이다</h2>
+    <p>
+      갤럭시 버즈 안에 <strong>IMU 3축 센서(가속도계 + 자이로스코프)</strong>가 들어 있다는 걸 알게 됐습니다.
+      머리의 미세한 움직임까지 감지할 수 있는 센서 — 이걸로 운동 동작을 트래킹할 수 있지 않을까?
+    </p>
+    <p>
+      웨이트 운동을 해본 사람이라면 압니다.
+      무거운 걸 들 때 <strong>휴대폰은 주머니에서 빼놓고, 워치는 손목이 불편해서 풀어놓는</strong> 경우가 많습니다.
+      하지만 이어폰은 다릅니다. 음악을 들으며 운동하는 건 너무 자연스러운 행동이라, 거의 모든 사람이 착용합니다.
+    </p>
+    <div class="case-carousel">
+      <div class="carousel-track">
+        <div class="carousel-slide"><img src="/case/busco-deck-problem.png" alt="문제 정의" class="zoomable" /></div>
+        <div class="carousel-slide"><img src="/case/busco-deck-tech.png" alt="핵심 기술" class="zoomable" /></div>
+        <div class="carousel-slide"><img src="/case/busco-deck-solution.png" alt="솔루션 방향" class="zoomable" /></div>
+      </div>
+      <p class="carousel-caption">CLAB 지원 피치덱 일부 — 클릭하여 확대</p>
+    </div>
+
+    <div class="lightbox" id="lightbox">
+      <img src="" alt="" id="lightboxImg" />
+    </div>
+
+    <div class="case-highlight">
+      <p>
+        <strong>핵심 인사이트:</strong> 웨이트 환경에서 가장 착용률이 높은 기기는 이어폰이다.
+        이미 착용하고 있는 기기에 센서가 있다면, 별도 기기 없이 운동 경험을 극대화할 수 있다.
+      </p>
+    </div>
+    <p>
+      이 발견이 Busco의 출발점이었습니다.
+      별도의 웨어러블을 추가하는 게 아니라, <strong>이미 끼고 있는 이어폰을 활용</strong>한다는 접근.
+      사용자에게 새로운 행동을 요구하지 않는다는 점이 핵심 차별화였습니다.
+    </p>
+  </section>
+
+  <!-- Story 01 — 난관: 프리토타이핑 -->
+  <section class="case-section">
+    <span class="case-section-label">Story 01 — Obstacle</span>
+    <h2>이가 없으면 잇몸으로 — 아두이노 프리토타이핑</h2>
+    <p>
+      그런데 첫 번째 난관이 바로 <strong>센서 스펙</strong>이었습니다.
+    </p>
+    <p>
+      버즈에 IMU 센서가 들어간 이유는 단순했습니다. <strong>에어팟에 들어갔기 때문</strong>입니다.
+      운동 트래킹 같은 목적성을 갖고 설계된 게 아니었기에, 충분한 성능을 내지 못했고
+      데이터를 실시간으로 트래킹하는 <strong>API조차 준비되어 있지 않았습니다.</strong>
+    </p>
+    <p>
+      사업부 협조를 얻고, API 개발을 요청하고, 성능 테스트까지 하는 건
+      짧은 시간 안에 감당하기엔 리소스가 너무 컸습니다.
+      정공법으로는 가능성을 검증하기도 전에 시간이 다 지나갈 판이었습니다.
+    </p>
+    <div class="case-highlight">
+      <p>
+        <strong>판단:</strong> 센서가 안 되면, 같은 스펙을 가진 다른 도구로 먼저 가능성을 증명하자.
+      </p>
+    </div>
+    <p>
+      그래서 <strong>버즈의 IMU와 동일 성능의 아두이노 센서를 헤어밴드에 부착</strong>하고,
+      웨이트 운동 동작을 트래킹하는 프리토타이핑을 진행했습니다.
+      완벽한 환경을 기다리지 않고, 가진 것으로 가능성을 먼저 보여주는 방식이었습니다.
+    </p>
+  </section>
+
+  <div class="case-img">
+    <img src="/case/busco-prototype.png" alt="아두이노 센서를 헤어밴드에 부착한 프리토타이핑" />
+    <p class="case-img-caption">아두이노 IMU 센서를 헤어밴드에 부착하고 바벨 운동 중 동작 데이터를 수집하는 모습. 버즈 센서와 동일 스펙으로 가능성을 먼저 검증했다.</p>
+  </div>
+
+  <div class="case-img">
+    <div class="carousel-track">
+      <div class="carousel-slide"><img src="/case/img/arduino-1.jpg" alt="아두이노 IMU 센서 모듈과 배터리 조립" class="zoomable" /></div>
+      <div class="carousel-slide"><img src="/case/img/arduino-2.jpg" alt="멀티미터로 센서 회로 테스트" class="zoomable" /></div>
+      <div class="carousel-slide"><img src="/case/img/arduino-3.jpg" alt="센서 데이터를 앱으로 수신하며 테스트" class="zoomable" /></div>
+    </div>
+    <p class="case-img-caption">IMU 센서 모듈 조립 → 멀티미터 회로 테스트 → 앱 연동까지의 하드웨어 프리토타이핑 과정</p>
+  </div>
+
+  <section class="case-section">
+    <p>
+      이 프리토타이핑은 <strong>두 가지를 동시에 증명</strong>했습니다.
+      머리에 부착된 IMU 센서로 웨이트 동작을 구분할 수 있다는 기술적 가능성과,
+      이 방식이 실제 운동 환경에서 작동한다는 현실적 타당성.
+      이 결과를 바탕으로 사업부 협업과 API 개발 요청의 근거를 확보할 수 있었습니다.
+    </p>
+  </section>
+
+  <!-- Story 02: 정확도 -->
+  <section id="story2" class="case-section">
+    <span class="case-section-label">Story 02 — Problem</span>
+    <h2>운동마다 정확도가 달랐다</h2>
+    <p>
+      프리토타이핑으로 가능성을 증명했지만, 정작 <strong>운동 종류마다 정확도 차이가 심했습니다.</strong>
+      더 치명적인 문제는 머리가 크게 움직이지 않는 운동 — 예를 들어 레그프레스 같은 하체 운동은
+      <strong>카운팅 자체가 되지 않는다</strong>는 점이었습니다.
+    </p>
+    <p>
+      이어폰 센서의 구조적 한계였습니다.
+      머리에 부착된 IMU 센서는 상체 운동에서는 미세한 머리 움직임을 감지하지만,
+      고개가 고정된 채로 수행하는 운동에서는 유의미한 데이터를 만들어내지 못했습니다.
+      이대로는 "일부 운동만 되는 서비스"가 될 수밖에 없었습니다.
+    </p>
+  </section>
+
+  <section class="case-section">
+    <span class="case-section-label">Story 02 — Solution</span>
+    <h2>루틴이라는 무기 — 기술적 약점을 제품으로 뒤집다</h2>
+    <p>
+      돌파구는 <strong>'루틴'</strong>이라는 개념에서 찾았습니다.
+    </p>
+    <p>
+      웨이트 트레이닝에는 <strong>점진적 과부하(Progressive Overload)</strong>라는 핵심 원칙이 있습니다.
+      장기적인 플랜 하에 점진적으로 무게·횟수·세트를 늘려가는 것인데,
+      이를 위해서는 미리 짜둔 루틴이 필수입니다.
+    </p>
+    <div class="case-highlight">
+      <p>
+        <strong>역발상:</strong> 사용자가 어떤 운동을 할지 미리 알고 있는 상태에서 트래킹하면,
+        모델이 모든 운동을 분류할 필요 없이 <strong>특정 운동의 패턴만 정확히 감지</strong>하면 된다.
+        루틴 기반 접근은 정확도를 비약적으로 높였다.
+      </p>
+    </div>
+    <p>
+      기술적으로 이 방향은 우리에게 매우 유리했습니다.
+      "아무 운동이나 알아맞히는" 범용 모델이 아니라,
+      <strong>루틴에 등록된 운동만 정확하게 잡아내는</strong> 특화 모델로 전환한 결과,
+      정확도가 크게 올라갔습니다.
+    </p>
+    <p>
+      여기서 한 발 더 나갔습니다.
+      실시간 트래킹이 가능하다는 것은, <strong>운동 중에 피드백을 줄 수 있다</strong>는 뜻이었습니다.
+      운동 속도가 느려지거나 빨라지는 지점을 감지해서
+      <strong>다음 세트의 무게나 횟수를 자동으로 조정해주는 실시간 운동 피드백</strong> 기능을
+      핵심 차별화 포인트로 내세웠습니다.
+    </p>
+    <div class="case-highlight">
+      <p>
+        <strong>결과:</strong> "정확도 부족"이라는 약점이,
+        "루틴 + 실시간 피드백"이라는 <strong>기존에 없던 제품 경험</strong>으로 뒤집어졌다.
+        센서의 한계를 인정하되, 제품 설계로 우회한 셈이다.
+      </p>
+    </div>
+  </section>
+
+  <div class="case-img">
+    <video controls playsinline preload="metadata">
+      <source src="/case/busco-prototype.m4v" type="video/mp4" />
+    </video>
+    <p class="case-img-caption">Busco 프로토타입 영상 — 루틴 기반 운동 트래킹과 점진적 과부하 개념이 적용된 데모</p>
+  </div>
+
+  <!-- 실행 -->
+  <section id="execution" class="case-section">
+    <span class="case-section-label">Execution</span>
+    <h2>C-Level PT와 기술 이관</h2>
+    <p>
+      11개월간의 기획·개발을 거쳐 C-Level PT에 참여했습니다.
+      총 13개 CLAB 팀 중 <strong>최고 등급</strong>을 획득했고,
+      이를 계기로 사내 피트니스 TF가 신설되며
+      팀이 5명에서 13명으로 확대, 과제 규모가 커졌습니다.
+    </p>
+    <p>
+      프로젝트의 기술 자산은 <strong>MX·디자인경영팀·로봇사업부 3개 사업부</strong>로 이관되었으며,
+      이후 Armstrong TF(신사업팀)의 피트니스 코칭 플랫폼으로 발전하게 됩니다.
+    </p>
+  </section>
+
+  <!-- 결과 -->
+  <section class="case-section">
+    <span class="case-section-label">Result</span>
+    <h2>핵심 성과</h2>
+    <div class="case-results">
+      <div class="case-result-card">
+        <div class="case-result-num">최고 등급</div>
+        <div class="case-result-label">C-Level PT (13개 팀 중)</div>
+      </div>
+      <div class="case-result-card">
+        <div class="case-result-num">3개</div>
+        <div class="case-result-label">사업부 기술 이관</div>
+      </div>
+      <div class="case-result-card">
+        <div class="case-result-num">A급 2건</div>
+        <div class="case-result-label">특허 확보</div>
+      </div>
+      <div class="case-result-card">
+        <div class="case-result-num">5 → TF</div>
+        <div class="case-result-label">팀 확대 및 TF 신설</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="case-img">
+    <p class="case-img-caption" style="margin-bottom: 12px; font-size: 14px; font-weight: 600; color: var(--text-1);">CLAB 페어 — 경영진 및 임직원 직접 체험</p>
+    <div class="carousel-track">
+      <div class="carousel-slide"><img src="/case/busco-clab-1.jpg" alt="CLAB 페어 현장 사진 1" /></div>
+      <div class="carousel-slide"><img src="/case/busco-clab-2.jpg" alt="CLAB 페어 현장 사진 2" /></div>
+      <div class="carousel-slide"><img src="/case/busco-clab-3.jpg" alt="CLAB 페어 현장 사진 3" /></div>
+    </div>
+  </div>
+
+  <!-- 러닝 -->
+  <section id="learning" class="case-section">
+    <span class="case-section-label">Learning</span>
+    <h2>배움</h2>
+    <div class="case-learning">
+      <p class="case-learning-title">0→1에서 가장 어려운 순간</p>
+      <p>
+        아이디어가 좋아도 기술적으로 가능한지 확인되기 전까지는 확신이 없습니다.
+        Busco에서 가장 어려웠던 순간은 버즈 센서 데이터의 정확도가
+        <strong>초기 기대의 절반 수준</strong>에 불과했을 때였습니다.
+        "이 방향이 맞는가?"를 묻는 대신, "어디까지가 가능하고,
+        가능한 범위 안에서 사용자에게 줄 수 있는 최선의 가치는 무엇인가?"를
+        재정의하는 것으로 돌파구를 찾았습니다.
+      </p>
+    </div>
+    <div class="case-learning">
+      <p class="case-learning-title">사내 벤처 실험이 실제 제품으로 이어지다</p>
+      <p>
+        Busco에서 검증한 IMU 기반 동작 인식 기술은
+        3개 사업부로 이관된 뒤, 현재
+        <strong>갤럭시 버즈 팀에서 실제 제품 적용을 위한 기술 검토가 진행</strong>되고 있습니다.
+        사내 벤처의 실험이 양산 제품에 반영될 수 있는 단계까지 온 것입니다.
+      </p>
+    </div>
+  </section>
+
+  <!-- 맨 위로 -->
+  <div class="case-back-top">
+    <a href="#" class="case-back-top-btn">↑ 맨 위로</a>
+  </div>
+
+  <!-- 하단 네비 -->
+  <nav class="case-footer-nav">
+    <a href="/case/pacemaker.html" class="case-footer-link">← 이전 <strong>Pacemaker</strong></a>
+    <a href="/" class="case-footer-link">이력서로 돌아가기 →</a>
+  </nav>
+
+<script>
+  // ── 사이드 인디케이터 스크롤 감지 ──
+  (function() {
+    var nav = document.getElementById('sideNav');
+    var links = nav.querySelectorAll('a[data-case]');
+    var sections = ['story1','story2','execution','learning'].map(function(id) { return document.getElementById(id); });
+
+    var observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          links.forEach(function(l) { l.classList.remove('active'); });
+          var target = nav.querySelector('[data-case="' + entry.target.id + '"]');
+          if (target) target.classList.add('active');
+        }
+      });
+    }, { rootMargin: '-30% 0px -60% 0px' });
+
+    sections.forEach(function(s) { if (s) observer.observe(s); });
+  })();
+</script>
+
+<script>
+(function(){
+  var lb=document.getElementById('lightbox'),img=document.getElementById('lightboxImg');
+  document.querySelectorAll('.zoomable').forEach(function(el){
+    el.addEventListener('click',function(){
+      img.src=el.src;img.alt=el.alt;lb.classList.add('open');
+    });
+  });
+  lb.addEventListener('click',function(){lb.classList.remove('open');});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')lb.classList.remove('open');});
+})();
+</script>
+</body>
+</html>
