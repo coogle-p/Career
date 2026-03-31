@@ -182,20 +182,26 @@ a:hover { text-decoration: underline; }
   border-radius: 12px;
 }
 
-/* ── 캐러셀 (인라인 가로 배치) ── */
+/* ── 캐러셀 (인라인 썸네일) ── */
 .case-carousel {
   margin: 24px 0;
 }
 
+.carousel-caption {
+  font-size: 12px;
+  color: var(--text-3);
+  margin-top: 8px;
+}
+
 .carousel-track {
   display: flex;
-  gap: 8px;
+  gap: 6px;
 }
 
 .carousel-slide {
   flex: 1;
   min-width: 0;
-  border-radius: 8px;
+  border-radius: 6px;
   overflow: hidden;
   border: 1px solid var(--border);
   background: var(--bg-card);
@@ -324,6 +330,22 @@ a:hover { text-decoration: underline; }
 @media (max-width: 768px) {
   .case-side-layout { grid-template-columns: 1fr; gap: 20px; }
   .case-side-imgs { grid-template-columns: repeat(4, 1fr); }
+}
+
+/* ── 좌우 2컬럼 이미지 그룹 ── */
+.case-two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+.case-two-col-group .compare-row {
+  margin-bottom: 6px;
+}
+.case-two-col-group .compare-row img {
+  height: 160px;
+}
+@media (max-width: 768px) {
+  .case-two-col { grid-template-columns: 1fr; gap: 16px; }
 }
 
 .compare-label.before {
