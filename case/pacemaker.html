@@ -209,7 +209,7 @@
 
   <div class="case-img">
     <canvas id="chart-case1" width="736" height="300"></canvas>
-    <p class="case-img-caption">v1.8.0(6월) 릴리즈 전후 4개월 비교. MAU +74%, 전환율 11.1% → 16.5%</p>
+    <p class="case-img-caption">v1.8.0(6월) 릴리즈 전후 6개월 비교 — MAU 28→82명, 신규가입자 22→76명, WAU 8.4→24.2명</p>
   </div>
 
   <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -641,14 +641,15 @@
       ctx.fillText(text, x, y - 10);
     }
 
-    // ── Chart 1: v1.8.0 전후 (4~7월) 꺾은선 — MAU만 ──
+    // ── Chart 1: v1.8.0 전후 (4~9월) 꺾은선 — MAU, 신규가입자, WAU ──
     (function() {
       const { ctx, w, h } = setupCanvas('chart-case1');
       const pad = { t: 50, r: 30, b: 50, l: 50 };
-      const labels = ['4월', '5월 (Before)', '6월 (v1.8.0)', '7월'];
-      const mau =  [28, 27, 47, 42];
-      const conv = [12.6, 11.1, 16.5, 13.6];
-      const maxY = 55;
+      const labels = ['4월', '5월', '6월 (v1.8.0)', '7월', '8월', '9월'];
+      const mau     = [28, 27, 47, 42, 45, 82];
+      const newUser = [22, 22, 41, 24, 43, 76];
+      const wau     = [8.4, 9.6, 15.8, 13.4, 12.6, 24.2];
+      const maxY = 90;
       const chartH = h - pad.t - pad.b;
       const stepX = (w - pad.l - pad.r) / (labels.length - 1);
 
@@ -664,51 +665,62 @@
         ctx.beginPath(); ctx.moveTo(pad.l, y); ctx.lineTo(w - pad.r, y); ctx.stroke();
       }
 
-      // MAU 영역 채움
-      ctx.fillStyle = C.accent + '15';
-      ctx.beginPath();
-      ctx.moveTo(pad.l, h - pad.b);
-      mau.forEach((v, i) => ctx.lineTo(pad.l + i * stepX, h - pad.b - (v / maxY) * chartH));
-      ctx.lineTo(pad.l + 3 * stepX, h - pad.b);
-      ctx.closePath();
-      ctx.fill();
+      // 헬퍼: 영역 채움
+      function fillArea(data, color) {
+        ctx.fillStyle = color + '12';
+        ctx.beginPath();
+        ctx.moveTo(pad.l, h - pad.b);
+        data.forEach((v, i) => ctx.lineTo(pad.l + i * stepX, h - pad.b - (v / maxY) * chartH));
+        ctx.lineTo(pad.l + (data.length - 1) * stepX, h - pad.b);
+        ctx.closePath();
+        ctx.fill();
+      }
 
-      // MAU 선
-      ctx.strokeStyle = C.accent;
-      ctx.lineWidth = 2.5;
-      ctx.lineJoin = 'round';
-      ctx.beginPath();
-      mau.forEach((v, i) => {
-        const x = pad.l + i * stepX;
-        const y = h - pad.b - (v / maxY) * chartH;
-        i === 0 ? ctx.moveTo(x, y) : ctx.lineTo(x, y);
-      });
-      ctx.stroke();
+      // 헬퍼: 선 그리기
+      function drawLine(data, color, width) {
+        ctx.strokeStyle = color;
+        ctx.lineWidth = width;
+        ctx.lineJoin = 'round';
+        ctx.beginPath();
+        data.forEach((v, i) => {
+          const x = pad.l + i * stepX;
+          const y = h - pad.b - (v / maxY) * chartH;
+          i === 0 ? ctx.moveTo(x, y) : ctx.lineTo(x, y);
+        });
+        ctx.stroke();
+      }
 
-      // MAU 점 + 값
-      mau.forEach((v, i) => {
-        const x = pad.l + i * stepX;
-        const y = h - pad.b - (v / maxY) * chartH;
-        // 점
-        ctx.fillStyle = i === 2 ? C.accent : '#fff';
-        ctx.strokeStyle = C.accent;
-        ctx.lineWidth = 2;
-        ctx.beginPath(); ctx.arc(x, y, 5, 0, Math.PI * 2); ctx.fill(); ctx.stroke();
-        // 값
-        ctx.fillStyle = '#f0f0f4';
-        ctx.font = 'bold 13px Inter, sans-serif';
-        ctx.textAlign = 'center';
-        ctx.fillText(v, x, y - 16);
-      });
+      // 헬퍼: 점 + 값
+      function drawDots(data, color, highlightIdx) {
+        data.forEach((v, i) => {
+          const x = pad.l + i * stepX;
+          const y = h - pad.b - (v / maxY) * chartH;
+          ctx.fillStyle = i === highlightIdx ? color : '#fff';
+          ctx.strokeStyle = color;
+          ctx.lineWidth = 2;
+          ctx.beginPath(); ctx.arc(x, y, 4, 0, Math.PI * 2); ctx.fill(); ctx.stroke();
+          ctx.fillStyle = '#f0f0f4';
+          ctx.font = 'bold 12px Inter, sans-serif';
+          ctx.textAlign = 'center';
+          ctx.fillText(v, x, y - 12);
+        });
+      }
 
-      // 전환율 값 (X축 아래 서브 라벨)
-      ctx.font = '11px Inter, sans-serif';
-      conv.forEach((v, i) => {
-        const x = pad.l + i * stepX;
-        ctx.fillStyle = i === 2 ? C.personal : C.text3;
-        ctx.textAlign = 'center';
-        ctx.fillText(v + '%', x, h - pad.b + 30);
-      });
+      const colNew = '#f59e0b';  // amber
+      const colWau = C.personal; // 기존 보라
+
+      // 영역
+      fillArea(mau, C.accent);
+
+      // 선 (WAU → 신규 → MAU 순서로 그려 MAU가 위)
+      drawLine(wau, colWau, 2);
+      drawLine(newUser, colNew, 2);
+      drawLine(mau, C.accent, 2.5);
+
+      // 점
+      drawDots(mau, C.accent, 5);
+      drawDots(newUser, colNew, 5);
+      drawDots(wau, colWau, 5);
 
       // X축 라벨
       ctx.font = '10px "Noto Sans KR", sans-serif';
@@ -724,16 +736,18 @@
       ctx.textAlign = 'left';
       ctx.fillStyle = C.accent;
       ctx.fillText('● MAU', pad.l, 20);
-      ctx.fillStyle = C.personal;
-      ctx.fillText('● 전환율', pad.l + 55, 20);
+      ctx.fillStyle = colNew;
+      ctx.fillText('● 신규가입자', pad.l + 55, 20);
+      ctx.fillStyle = colWau;
+      ctx.fillText('● WAU', pad.l + 138, 20);
 
-      // +74% 어노테이션 (6월 점 오른쪽 위)
-      const x6a = pad.l + 2 * stepX;
-      const y6a = h - pad.b - (47 / maxY) * chartH;
+      // 9월 어노테이션
+      const x9 = pad.l + 5 * stepX;
+      const y9 = h - pad.b - (82 / maxY) * chartH;
       ctx.fillStyle = '#4ade80';
       ctx.font = 'bold 11px Inter, sans-serif';
       ctx.textAlign = 'left';
-      ctx.fillText('+74%', x6a + 14, y6a - 24);
+      ctx.fillText('MAU +193%', x9 - 70, y9 - 24);
     })();
 
     // ── Chart 2: 전체 기간 MAU + WAU (Case 2) ──
